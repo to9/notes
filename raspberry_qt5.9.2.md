@@ -37,7 +37,7 @@ arm-bcm2708-linux-gnueabi         gcc-linaro-arm-linux-gnueabihf-raspbian
 
 - 查看交叉编译编译器版本, 命令行输入arm-linux-gnueabihf-gcc –v 
 
-#### qt源码编译
+#### 挂载树莓派系统
 
 - 创建交叉编译qt所需根目录opt
 ````
@@ -76,6 +76,16 @@ root@gaodong-VirtualBox:~/opt# mount -o loop,offset=47185920 2017-04-10-raspbian
 root@gaodong-VirtualBox:/mnt/rasp-pi-rootfs# ls
 bin  boot  debian-binary  dev  etc  home  lib  lost+found  man  media  mnt  opt  
 proc  root  run  sbin  srv  sys  tmp  usr  var
+```
+
+#### qt源码编译
+- 解压qt源码
+```
+root@gaodong-VirtualBox:~/opt# tar -xvf qt-everywhere-opensource-src-5.9.2.tar
+```
+- 编译qtbase
+```
+
 ```
 
 #### 虚拟机Ubuntu下安装QT开发环境
