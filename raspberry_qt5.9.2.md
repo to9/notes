@@ -10,6 +10,7 @@
 - [树莓派交叉编译器](https://github.com/raspberrypi/tools)
 
 #### 虚拟机安装
+windows7 32-bit 安装虚拟机VirtualBox.
 
 #### 虚拟机安装Ubuntu 16.4
 
