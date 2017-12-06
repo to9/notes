@@ -16,6 +16,20 @@ windows7 32-bit 安装虚拟机VirtualBox.
 
 #### Ubuntu下交叉编译器设置
 
+- 解压压缩文件
+<div align=left><img width="547" height="21" src="https://github.com/to9/notes/blob/master/raspberry_qt5.9.2_images/tools-master_1.png"/></div>
+<div align=left><img width="729" height="53" src="https://github.com/to9/notes/blob/master/raspberry_qt5.9.2_images/tools-master_2.png"/></div>
+<div align=left><img width="713" height="86" src="https://github.com/to9/notes/blob/master/raspberry_qt5.9.2_images/tools-master_3.png"/></div>
+
+  该目录中存在4个文件夹，本例使用gcc-linaro-arm-linux-gnueabihf-raspbian 或 gcc-linaro-arm-linux-gnueabihf-raspbian-x64。前者对应32位系统后者对应64位系统。
+  arm-bcm2708hardfp-linux-gnueabi
+  gcc-linaro-arm-linux-gnueabihf-raspbian
+  arm-bcm2708-linux-gnueabi
+  gcc-linaro-arm-linux-gnueabihf-raspbian-x64
+
+- 查看交叉编译编译器版本, 命令行输入arm-linux-gnueabihf-gcc –v 
+<div align=left><img width="713" height="86" src="https://github.com/to9/notes/blob/master/raspberry_qt5.9.2_images/tools-master_4.png"/></div>
+
 #### qt源码编译
 
 #### 虚拟机Ubuntu下安装QT开发环境
