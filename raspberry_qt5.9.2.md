@@ -44,14 +44,14 @@ arm-bcm2708-linux-gnueabi         gcc-linaro-arm-linux-gnueabihf-raspbian
 root@gaodong-VirtualBox:~# mkdir ~/opt
 root@gaodong-VirtualBox:~# cd ~/opt
 ````
+
 - 解压树莓派系统镜像文件
 ```
 root@gaodong-VirtualBox:~/opt# unzip 2017-04-10-raspbian-jessie.zip
 ```
 
 - 创建挂载目录和挂载Raspbian系统镜像文件
-
-````
+```
 root@gaodong-VirtualBox:~/opt# mkdir /mnt/rasp-pi-rootfs
 
 root@gaodong-VirtualBox:~/opt# fdisk -l 2017-04-10-raspbian-jessie.img 
