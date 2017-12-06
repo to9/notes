@@ -87,4 +87,5 @@ proc  root  run  sbin  srv  sys  tmp  usr  var
 
 #### 交叉编译：
 [QT官方教程](https://wiki.qt.io/Raspberry_Pi_Beginners_Guide)
+
 [QT官方教程翻译版](http://blog.diveinedu.com/%E6%A0%91%E8%8E%93%E6%B4%BE%E4%B8%8Aqt5%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E7%A7%BB%E6%A4%8D%E6%96%B0%E6%89%8B%E6%8C%87%E5%8D%97/)
