@@ -1,5 +1,5 @@
 
-## 树莓派zerow运行Qt5.9.2
+## 树莓派zerow + Qt5.9.2
 
 ### 搭建环境
 - Windows7 32-bit
