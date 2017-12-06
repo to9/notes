@@ -67,7 +67,8 @@ root@gaodong-VirtualBox:~/opt# mount -o loop,offset=47185920 2017-04-10-raspbian
 挂载成功后/mnt/rasp-pi-rootfs目录下会出现树莓派系统文件系统目录
 ```
 root@gaodong-VirtualBox:/mnt/rasp-pi-rootfs# ls
-bin  boot  debian-binary  dev  etc  home  lib  lost+found  man  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
+bin  boot  debian-binary  dev  etc  home  lib  lost+found  man  media  mnt  opt  
+proc  root  run  sbin  srv  sys  tmp  usr  var
 ```
 
 #### 虚拟机Ubuntu下安装QT开发环境
