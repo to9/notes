@@ -36,7 +36,6 @@ arm-bcm2708-linux-gnueabi         gcc-linaro-arm-linux-gnueabihf-raspbian
   gcc-linaro-arm-linux-gnueabihf-raspbian-x64
 
 - 查看交叉编译编译器版本, 命令行输入arm-linux-gnueabihf-gcc –v 
-<div align=left><img width="713" height="86" src="https://github.com/to9/notes/blob/master/raspberry_qt5.9.2_images/tools-master_4.png"/></div>
 
 #### qt源码编译
 
