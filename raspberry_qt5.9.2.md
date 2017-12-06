@@ -18,7 +18,7 @@ windows7 32-bit 安装虚拟机VirtualBox.
 
 - 解压压缩文件
 <div align=left><img width="547" height="21" src="https://github.com/to9/notes/blob/master/raspberry_qt5.9.2_images/tools-master_1.png"/></div>
-<div align=left><img width="729" height="53" src="https://github.com/to9/notes/blob/master/raspberry_qt5.9.2_images/tools-master_2.png"/></div>
+<div align=left><img width="713" height="52" src="https://github.com/to9/notes/blob/master/raspberry_qt5.9.2_images/tools-master_2.png"/></div>
 <div align=left><img width="713" height="86" src="https://github.com/to9/notes/blob/master/raspberry_qt5.9.2_images/tools-master_3.png"/></div>
 
   该目录中存在4个文件夹，本例使用gcc-linaro-arm-linux-gnueabihf-raspbian 或 gcc-linaro-arm-linux-gnueabihf-raspbian-x64。前者对应32位系统后者对应64位系统。
