@@ -12,5 +12,7 @@ Codename:       jessie
 ```
 
 #### 2: 40Pin定义
+<div align=left><img width="285" height="382" src="https://github.com/to9/notes/blob/master/images/pi_40pin.png"/></div>
+
 
 #### 
