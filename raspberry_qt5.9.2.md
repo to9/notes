@@ -27,20 +27,18 @@ tools-master                        -- 树莓派交叉编译工具
 qt-everywhere-opensource-src-5.9.2  --交叉编译Qt源码
 ```
 
-- mnt目录
+- mnt目录 (挂载树莓派系统跟目录)
 ```
 root@gaodong-VirtualBox:/mnt# ls
 rasp-pi-rootfs                      --挂载树莓配系统跟目录
 ```
 
-- qt-5.9.2-raspberry目录
+- qt-5.9.2-raspberry目录 (为编译Qt源码qbase生成的编译器qmake等工具,用来编译arm平台qt工程代码。)
 ```
 root@gaodong-VirtualBox:/usr/local# ls
 bin  etc  games  include  lib  man  qt-5.9.2-raspberry  sbin  share  src
 ```
-qt-5.9.2-raspberry目录为编译Qt源码qbase生成的编译器qmake等工具,用来编译arm平台qt工程代码。
 
-挂载后系统
 #### Ubuntu下交叉编译器设置
 
 - 解压压缩文件
