@@ -14,6 +14,28 @@ windows7 32-bit 安装虚拟机VirtualBox.
 
 #### 虚拟机安装Ubuntu 16.4
 
+#### Ubuntu编译目录结构
+- opt目录结构
+```
+root@gaodong-VirtualBox:~/opt# ls
+2017-04-10-raspbian-jessie.img      -- 树莓派系统镜像文件
+auto-mount-img.sh                   -- 树莓派系统挂载脚本
+qt-opensource-linux-x64-5.9.2.run   -- Qt5.9.2Ubuntu 64bit编译IDE
+tools-master                        -- 树莓派交叉编译工具
+qt-everywhere-opensource-src-5.9.2  --交叉编译Qt源码
+```
+
+- mnt目录结构
+```
+root@gaodong-VirtualBox:/mnt# ls
+rasp-pi-rootfs                      --挂载树莓配系统跟目录
+```
+
+- 交叉编译后Qt库安装目录
+```
+root@gaodong-VirtualBox:/usr/local# ls
+bin  etc  games  include  lib  man  qt-5.9.2-raspberry  sbin  share  src
+```
 #### Ubuntu下交叉编译器设置
 
 - 解压压缩文件
