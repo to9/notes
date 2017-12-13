@@ -118,7 +118,15 @@ root@gaodong-VirtualBox:~/opt# tar -xvf qt-everywhere-opensource-src-5.9.2.tar
 
 #### 树莓派运行QT程序
 
+#### 开启自启动app程序
+在etc目录profile.d目录下增加开机执行脚本程序PiSmartCenter.sh。
 
+ - 注意： 临时解决方法，每次控制台登录app都会重复启动，待解决
+  
+```
+root@raspberrypi:/etc/profile.d# 
+bash_completion.sh  infinality-settings.sh  PiSmartCenter.sh  sshpwd.sh
+```
 
 #### 交叉编译：
 [QT官方教程](https://wiki.qt.io/Raspberry_Pi_Beginners_Guide)
