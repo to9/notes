@@ -12,16 +12,16 @@
 #### 4. 环境确认，是否装ssh，git， 以ssh已经安装好为例子，(阿里云ubuntu主机已经安装好ssh)
 
 #### 5. 安装git
-```
-root@iZ2zeeutrttwr14jmp2cpcZ:/# apt-get update
-root@iZ2zeeutrttwr14jmp2cpcZ:/# apt-get install git
-```
+
+	root@iZ2zeeutrttwr14jmp2cpcZ:/# apt-get update
+	root@iZ2zeeutrttwr14jmp2cpcZ:/# apt-get install git
+
 
 查看git版本
-```
-root@iZ2zeeutrttwr14jmp2cpcZ:/# git --version
-git version 2.7.4
-```
+
+	root@iZ2zeeutrttwr14jmp2cpcZ:/# git --version
+	git version 2.7.4
+
 
 #### 6. 为服务器版本库创建单独git用户
 	root@iZ2zeeutrttwr14jmp2cpcZ:/home# adduser git
