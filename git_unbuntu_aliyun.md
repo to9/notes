@@ -16,7 +16,8 @@ The program 'git' is currently not installed. You can install it by typing:
 sudo apt-get install git
 ```
 ### 5. Git安装
-先运行apt-get update, update作用是从/etc/apt/source.list文件中定义的源中去同步包的索引文件，根据索引检查更新，获取的是软件的包的一些状态信息从而保证要接下来下载的是最新版本.
+先运行apt-get update, update作用是从/etc/apt/source.list文件中定义的源中去同步包的索引文件，根据索引检查更新，获取的是软件的包的一些	                  状态信息从而保证要接下来下载的是最新版本.
+
 ```bash
 root@h2ze245d:/# apt-get update
 root@h2ze245d:/# apt-get install git
