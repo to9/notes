@@ -12,10 +12,10 @@
 #### 4. 环境确认，是否装ssh，git， 以ssh已经安装好为例子，(阿里云ubuntu主机已经安装好ssh)
 
 #### 5. 安装git
-
+```bash
 	root@iZ2zeeutrttwr14jmp2cpcZ:/# apt-get update
 	root@iZ2zeeutrttwr14jmp2cpcZ:/# apt-get install git
-
+```
 
 查看git版本
 
@@ -83,49 +83,3 @@ gaodongzi.ppk文件用作git克隆推送代码时候需要的秘钥文件。
 #### 10.把生成的gaodongzi@126.com.pub公钥文件数据复制到git用户根目录隐藏文件夹.ssh里面的authorized_keys文件中，注意复制时候要保证文件一致。
 
 
-#### 11.在我们服务器上为git创建代码仓，以为这个是我们之后需要把代码推送拉取得地方
-我把代码仓放在服务器/opt目录下.切换到超级用户su root下创建git目录, 在git下及时使用sudo mkdir git 也是权限没有。
-
-	root@iZ2zeeutrttwr14jmp2cpcZ:/opt# mkdir git
-	root@iZ2zeeutrttwr14jmp2cpcZ:/opt# cd git
-	root@iZ2zeeutrttwr14jmp2cpcZ:/opt/git# git init --bare project.git
-	root@iZ2zeeutrttwr14jmp2cpcZ:/opt/git/project.git# ls
-	branches  config  description  HEAD  hooks  info  objects  refs
-
-
-#### 12. windows下克隆刚建立的版本库
-至于windows下git使用这篇文章暂时先不介绍，自行补脑后再继续。你也可以再linux下直接测试。
-git@139.10.107.141:/opt/git/project.git, 不用多想ip地址肯定是假的
-成功克隆服务器版本库后，修改版本库里面文件然后在推送，(如果不出意外的话,推送不上去， 我搽.....)
-
-#### 13. 任务尚未完成还需继续...
-使用git用户登录查看/opt/git目录权限
-
-	git@iZ2zeeutrttwr14jmp2cpcZ:/opt$ ls -l
-	total 4
-	drwxr-xr-x 3 root root 4096 Dec 28 14:55 git
-
-
-切换到root用户对git目录进行权限修改
-
-	root@iZ2zeeutrttwr14jmp2cpcZ:/opt# chown -R git:git git
-	root@iZ2zeeutrttwr14jmp2cpcZ:/opt# chmod 777 git
-	root@iZ2zeeutrttwr14jmp2cpcZ:/opt# ls -l
-	total 4
-	drwxrwxrwx 3 git git 4096 Dec 28 14:55 git
-
-
-再切换会git用户查看权限，这下文件夹git具有读写权限了。我们可以放下使用了。
-
-	git@iZ2zeeutrttwr14jmp2cpcZ:/opt$ ls -l
-	total 4
-	drwxrwxrwx 3 git git 4096 Dec 28 14:55 git
-
-
-到此...在服务器上部署Git算完成了
-如果是多人使用，我么还需要gitosis来管理没个人的秘钥。如果你没疯那让我们继续...
-
-
-
-#### 参考：
- https://git-scm.com/book/zh/v1/服务器上的-Git-在服务器上部署-Git
