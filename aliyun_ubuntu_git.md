@@ -24,25 +24,23 @@ git version 2.7.4
 ```
 
 #### 6. 为服务器版本库创建单独git用户
-```
-root@iZ2zeeutrttwr14jmp2cpcZ:/home# adduser git
-Adding user `git' ...
-Adding new group `git' (1001) ...
-Adding new user `git' (1001) with group `git' ...
-Creating home directory `/home/git' ...
-Copying files from `/etc/skel' ...
-Enter new UNIX password:
-Retype new UNIX password:
-passwd: password updated successfully
-Changing the user information for git
-Enter the new value, or press ENTER for the default
-	Full Name []:
-	Room Number []:
-	Work Phone []:
-	Home Phone []:
-	Other []:
-Is the information correct? [Y/n] y
-```
+	root@iZ2zeeutrttwr14jmp2cpcZ:/home# adduser git
+	Adding user `git' ...
+	Adding new group `git' (1001) ...
+	Adding new user `git' (1001) with group `git' ...
+	Creating home directory `/home/git' ...
+	Copying files from `/etc/skel' ...
+	Enter new UNIX password:
+	Retype new UNIX password:
+	passwd: password updated successfully
+	Changing the user information for git
+	Enter the new value, or press ENTER for the default
+		Full Name []:
+		Room Number []:
+		Work Phone []:
+		Home Phone []:
+		Other []:
+	Is the information correct? [Y/n] y
 
 切换到git用户home目录下会多出来刚创建的用户git
 ```
