@@ -10,19 +10,14 @@
 
 ### 4. 环境确认，是否装ssh，git， 以ssh已经安装好为例子，(阿里云ubuntu主机已经安装好ssh)
 
-### 5. 安装git
+### 5. Git安装与版本查看
 ```bash
 root@iZ2zeeutrttwr14jmp2cpcZ:/# apt-get update
 root@iZ2zeeutrttwr14jmp2cpcZ:/# apt-get install git
-```
-
-查看git版本
-```bash
 root@iZ2zeeutrttwr14jmp2cpcZ:/# git --version
 git version 2.7.4
 ```
 ### 6. 为服务器版本库创建单独git用户
-
 ```bash
 root@iZ2zeeutrttwr14jmp2cpcZ:/home# adduser git
 Adding user `git' ...
@@ -34,7 +29,7 @@ Enter new UNIX password:
 Retype new UNIX password:
 passwd: password updated successfully
 Changing the user information for git
-Enter the new value, or press ENTER for the default
+Enter the new value, or press ENTER for the default	
         Full Name []:
         Room Number []:
         Work Phone []:
@@ -61,15 +56,15 @@ git@iZ2zeeutrttwr14jmp2cpcZ:~$ ls -a
 .  ..  .bash_logout  .bashrc  .profile  .ssh
 ```
 
-### . 在git用户下查看.ssh目录下时候有authorized_keys文件, (如果不出以为的话肯定是没有的 我搽...)
-进入.ssh目录新建authorized_keys文件，至此我们接下来进行该文件中需要填写每个git客户端需要的公钥数据， 那这个数据那来呢，让我们接着看。
+### . 在git用户下查看.ssh目录下时候有authorized_keys文件, (如果不出意外的话肯定是没有的 我搽...)
+  进入.ssh目录新建authorized_keys文件，至此我们接下来进行该文件中需要填写每个git客户端需要的公钥数据， 那这个数据那来呢，让我们接着看.
 ```bash
 git@iZ2zeeutrttwr14jmp2cpcZ:~/.ssh$ ls
 authorized_keys
 ```
 
 ### 9. 生成git推送和拉取权限文件，生成rsa秘钥对文件
-生成RSA秘钥对时候需要输入密码，这个密码一定要记住后面要使用，而且以后的git克隆推送都需要
+生成RSA秘钥对时候需要输入密码，这个密码一定要记住后面要使用，而且以后的git克隆推送都需要,生成的文件*.pub为RSA公钥文件， 另外一个为RSA私钥文件。
 ```bash
 git@iZ2zeeutrttwr14jmp2cpcZ:~$ ssh-keygen -t rsa
 Generating public/private rsa key pair.
@@ -95,8 +90,6 @@ The key's randomart image is:
 git@iZ2zeeutrttwr14jmp2cpcZ:~$ ls
 gaodongzi@126.com  gaodongzi@126.com.pub
 ```
-
-生成的文件*.pub为RSA公钥文件， 另外一个为RSA私钥文件。
 
 ### 9.1 在win下使用Git安装自带工具Puttygen.exe生成*.ppk文件
 对于需要使用RSA秘钥对生成来源, 你可以使用win生成也可使用linux生成，
