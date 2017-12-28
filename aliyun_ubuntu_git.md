@@ -81,17 +81,8 @@ Your public key has been saved in gaodongzi@126.com.pub.
 The key fingerprint is:
 SHA256:uT0cfuz+i8WFGMPVW3pAHp6NntFJdrVsfXY7NuVgY0Q git@iZ2zeeutrttwr14jmp2cpcZ
 The key's randomart image is:
----[RSA 2048]----+
-|             oE++|
-|           . ==*B|
-|            + @B@|
-|         .   BoX*|
-|        S . . +*o|
-|         = o ...o|
-|        . = o o  |
-|           + o   |
-|           .+.o. |
-----[SHA256]-----+
+
+
 git@iZ2zeeutrttwr14jmp2cpcZ:~$ ls
 gaodongzi@126.com  gaodongzi@126.com.pub
 ```
