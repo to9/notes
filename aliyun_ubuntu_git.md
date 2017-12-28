@@ -1,7 +1,8 @@
-Ubuntu16.4 x64 详细服务器上的Git架设
+## Ubuntu16.4 x64 详细服务器上的Git架设
+
 当前运行用户为root，
 
-1. 知识普及 git，git-core, gitosis
+###1. 知识普及 git，git-core, gitosis
 
 2. Git使用区分客户端git，服务器端git
 
