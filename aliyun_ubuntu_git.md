@@ -75,10 +75,10 @@ git@iZ2zeeutrttwr14jmp2cpcZ:~$ ls -a
 gaodongzi@126.com, gaodongzi@126.com.pub
 运行Puttygen.exe 
 	--> Conversions 
-		--> Import Key 选择刚生成的gaodongzi@126.com 私钥文件 输入生成秘钥时候的秘钥-
-			-> Save private key 保存为gaodongzi.ppk文件
+		--> Import Key 选择刚生成的123456@126.com 私钥文件 输入生成秘钥时候的秘钥-
+			-> Save private key 123456.ppk文件
 
-gaodongzi.ppk文件用作git克隆推送代码时候需要的秘钥文件。
+123456.ppk文件用作git克隆推送代码时候需要的秘钥文件。
  
 10. 把生成b公钥文件数据复制到用户根目录隐藏文件夹里面的文件中，注意复制时候要保证文件一致.
 ```
