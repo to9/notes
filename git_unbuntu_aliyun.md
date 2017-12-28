@@ -9,9 +9,9 @@
 * [Git安装](#5) 
 * [服务器创建Git用户](#6)
 * [确认git用户.ssh文件存在与否](#7)
-* [代码高亮](#8)
-* [表格](#9) 
-* [表情](#10)
+* [authorized_keys文件](#8)
+* [Git用户密钥生成/使用](#9) 
+* [为git用户设置SSH验证](#10)
 * [创建初始化代码仓](#11)
 * [win下测试版本库](#12)
 * [git目录权限](#13)
@@ -94,15 +94,15 @@ git@h2ze245d:~$ ls -a
 .  ..  .bash_logout  .bashrc  .profile  .ssh
 ```
 
-### . 在git用户下查看.ssh目录下时候有authorized_keys文件, (如果不出意外的话肯定是没有的 我搽...)
-  进入.ssh目录新建authorized_keys文件，至此我们接下来进行该文件中需要填写每个git客户端需要的公钥数据， 那这个数据那来呢，让我们接着看.
+### 8. authorized_keys文件
+在git用户下查看.ssh目录下时候有authorized_keys文件, (如果不出意外的话肯定是没有的 我搽...)进入.ssh目录新建authorized_keys文件，至此我们接下来进行该文件中需要填写每个git客户端需要的公钥数据， 那这个数据那来呢，让我们接着看.
 ```bash
 git@h2ze245d:~/.ssh$ ls
 authorized_keys
 ```
 
-### 9. 生成git推送和拉取权限文件，生成rsa秘钥对文件
-生成RSA秘钥对时候需要输入密码，这个密码一定要记住后面要使用，而且以后的git克隆推送都需要,生成的文件*.pub为RSA公钥文件， 另外一个为RSA私钥文件。
+### 9. Git用户密钥生成/使用
+生成git推送和拉取权限文件，生成rsa秘钥对文件， 生成RSA秘钥对时候需要输入密码，这个密码一定要记住后面要使用，而且以后的git克隆推送都需要,生成的文件*.pub为RSA公钥文件， 另外一个为RSA私钥文件。
 ```bash
 git@h2ze245d:~$ ssh-keygen -t rsa
 Generating public/private rsa key pair.
@@ -128,8 +128,7 @@ The key's randomart image is:
 git@h2ze245d:~$ ls
 key123@126.com  key123@126.com.pub
 ```
-
-### 9.1 在win下使用Git安装自带工具Puttygen.exe生成*.ppk文件
+在win下使用Git安装自带工具Puttygen.exe生成*.ppk文件
 对于需要使用RSA秘钥对生成来源, 你可以使用win生成也可使用linux生成，
 本实例是在linux下生成并通过ssh工具到处到win下。
 key123@126.com, key123@126.com.pub
@@ -141,8 +140,8 @@ key123@126.com, key123@126.com.pub
 key123.ppk文件用作git克隆推送代码时候需要的秘钥文件。
  
 
-### 10.把生成的key123@126.com.pub公钥文件数据复制到git用户根目录隐藏文件夹.ssh里面的authorized_keys文件中，注意复制时候要保证文件一致。
-
+### 10.为git用户设置SSH验证
+把生成的key123@126.com.pub公钥文件数据复制到git用户根目录隐藏文件夹.ssh里面的authorized_keys文件中，注意复制时候要保证文件一致。
 
 ### 11.创建初始化代码仓
 在我们服务器上为git创建代码仓，以为这个是我们之后需要把代码推送拉取得地方，我把代码仓放在服务器/opt目录下.切换到超级用户su root下创建git目录, 在git下及时使用sudo mkdir git 也是权限没有。
