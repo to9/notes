@@ -80,4 +80,5 @@ gaodongzi@126.com, gaodongzi@126.com.pub
 
 gaodongzi.ppk文件用作git克隆推送代码时候需要的秘钥文件。
  
+10.把生成的gaodongzi@126.com.pub公钥文件数据复制到git用户根目录隐藏文件夹.ssh里面的authorized_keys文件中，注意复制时候要保证文件一致。
 
