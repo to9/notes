@@ -82,5 +82,5 @@ git@iZ2zeeutrttwr14jmp2cpcZ:~$ ls
 gaodongzi@126.com  gaodongzi@126.com.pub
 ```
 
-生成的文件*.pub为RSA公钥文件， 另外一个为RSA私钥文件。
+生成的文件1.pub为RSA公钥文件， 另外一个为RSA私钥文件。
 
