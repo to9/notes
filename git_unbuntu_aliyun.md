@@ -1,14 +1,40 @@
 ## Ubuntu16.4 x64 详细服务器上的Git架设
 
+
+## 目录
+* [知识普及](#横线)
+* [Git服务器/客户端区别](#标题)
+* [Git的通信协议](#文本)
+    * 普通文本
+    * 单行文本
+* [环境确认](#图片)
+    * 来源于网络的图片
+    * GitHub仓库中的图片
+* [Git安装](#链接) 
+    * 文字超链接
+    * [图片链接](#图片链接)
+* [服务器创建Git用户](#列表)
+    * 无序列表
+    * 复选框列表
+* [确认git用户.ssh文件存在与否](#块引用)
+* [代码高亮](#代码高亮)
+* [表格](#表格) 
+* [表情](#表情)
+* [diff语法](#diff语法)
+
 当前运行用户为root，
 
-### 1. 知识普及 git，git-core, gitosis
+### 1. 知识普及 
+	git，git-core, gitosis
 
-### 2. Git使用区分客户端git，服务器端git
+### 2. Git服务器/客户端区别
+	使用区分客户端git，服务器端git
 
-### 3. 服务器上Git协议 本文实例使用的是ssh
+### 3. Git的通信协议
+	协议服务器上Git协议 本文实例使用的是ssh
 
-### 4. 环境确认，是否装SSH，Git， 以SSH已经安装好为例子，(阿里云Ubuntu主机已经安装好SSH)
+### 4. 环境确认
+	，是否装SSH，Git， 以SSH已经安装好为例子，(阿里云Ubuntu主机已经安装好SSH)
 - 当前SSH是否安装 **( :o: )**
 ```bash
 root@h2ze245d:/# ssh
@@ -34,7 +60,7 @@ sudo apt-get install git
 root@h2ze245d:/# apt-get update
 root@h2ze245d:/# apt-get install git
 ```
-### 6. 为服务器版本库创建单独git用户
+### 6. 服务器创建Git用户
 ```bash
 root@h2ze245d:/home# adduser git
 Adding user `git' ...
@@ -61,7 +87,8 @@ root@h2ze245d:/home# ls
 admin  git
 ```
 
-### 7. 查看用户跟目录隐藏文件夹是否有.ssh文件夹, 如果没有则创建.ssh目录
+### 7. 确认git用户.ssh文件存在与否
+	查看用户跟目录隐藏文件夹是否有.ssh文件夹, 如果没有则创建.ssh目录
 ```bash
 root@h2ze245d:/home# su git
 git@h2ze245d:/home$ cd
