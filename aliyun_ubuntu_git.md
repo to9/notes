@@ -99,34 +99,3 @@ branches  config  description  HEAD  hooks  info  objects  refs
 git@139.10.107.141:/opt/git/project.git, 不用多想ip地址肯定是假的
 成功克隆服务器版本库后，修改版本库里面文件然后在推送，(如果不出意外的话,推送不上去， 我搽.....)
 
-13. 任务尚未完成还需继续...
-使用git用户登录查看/opt/git目录权限
-```
-git@iZ2zeeutrttwr14jmp2cpcZ:/opt$ ls -l
-total 4
-drwxr-xr-x 3 root root 4096 Dec 28 14:55 git
-```
-
-切换到root用户对git目录进行权限修改
-```
-root@iZ2zeeutrttwr14jmp2cpcZ:/opt# chown -R git:git git
-root@iZ2zeeutrttwr14jmp2cpcZ:/opt# chmod 777 git
-root@iZ2zeeutrttwr14jmp2cpcZ:/opt# ls -l
-total 4
-drwxrwxrwx 3 git git 4096 Dec 28 14:55 git
-```
-
-再切换会git用户查看权限，这下文件夹git具有读写权限了。我们可以放下使用了。
-```
-git@iZ2zeeutrttwr14jmp2cpcZ:/opt$ ls -l
-total 4
-drwxrwxrwx 3 git git 4096 Dec 28 14:55 git
-```
-
-到此...在服务器上部署Git算完成了
-如果是多人使用，我么还需要gitosis来管理没个人的秘钥。如果你没疯那让我们继续...
-
-
-
-参考：
-https://git-scm.com/book/zh/v1/服务器上的-Git-在服务器上部署-Git
