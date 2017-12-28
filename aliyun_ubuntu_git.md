@@ -80,19 +80,10 @@ gaodongzi@126.com, gaodongzi@126.com.pub
 
 gaodongzi.ppk文件用作git克隆推送代码时候需要的秘钥文件。
  
-
 10.把生成的gaodongzi@126.com.pub公钥文件数据复制到git用户根目录隐藏文件夹.ssh里面的authorized_keys文件中，注意复制时候要保证文件一致。
-
 
 11.在我们服务器上为git创建代码仓，以为这个是我们之后需要把代码推送拉取得地方
 我把代码仓放在服务器/opt目录下.切换到超级用户su root下创建git目录, 在git下及时使用sudo mkdir git 也是权限没有。
-```
-root@iZ2zeeutrttwr14jmp2cpcZ:/opt# mkdir git
-root@iZ2zeeutrttwr14jmp2cpcZ:/opt# cd git
-root@iZ2zeeutrttwr14jmp2cpcZ:/opt/git# git init --bare project.git
-root@iZ2zeeutrttwr14jmp2cpcZ:/opt/git/project.git# ls
-branches  config  description  HEAD  hooks  info  objects  refs
-```
 
 12. windows下克隆刚建立的版本库
 至于windows下git使用这篇文章暂时先不介绍，自行补脑后再继续。你也可以再linux下直接测试。
