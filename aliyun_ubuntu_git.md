@@ -12,14 +12,14 @@
 
 ### 5. Git安装与版本查看
 ```bash
-root@iZ2zeeutrttwr14jmp2cpcZ:/# apt-get update
-root@iZ2zeeutrttwr14jmp2cpcZ:/# apt-get install git
-root@iZ2zeeutrttwr14jmp2cpcZ:/# git --version
+root@h2ze245d:/# apt-get update
+root@h2ze245d:/# apt-get install git
+root@h2ze245d:/# git --version
 git version 2.7.4
 ```
 ### 6. 为服务器版本库创建单独git用户
 ```bash
-root@iZ2zeeutrttwr14jmp2cpcZ:/home# adduser git
+root@h2ze245d:/home# adduser git
 Adding user `git' ...
 Adding new group `git' (1001) ...
 Adding new user `git' (1001) with group `git' ...
@@ -40,41 +40,41 @@ Is the information correct? [Y/n] y
 
 切换到git用户home目录下会多出来刚创建的用户git
 ```bash
-root@iZ2zeeutrttwr14jmp2cpcZ:/home# ls
+root@h2ze245d:/home# ls
 admin  git
 ```
 
 ### 7. 查看用户跟目录隐藏文件夹是否有.ssh文件夹, 如果没有则创建.ssh目录
 ```bash
-root@iZ2zeeutrttwr14jmp2cpcZ:/home# su git
-git@iZ2zeeutrttwr14jmp2cpcZ:/home$ cd
-git@iZ2zeeutrttwr14jmp2cpcZ:~$ ls -a
+root@h2ze245d:/home# su git
+git@h2ze245d:/home$ cd
+git@h2ze245d:~$ ls -a
 .  ..  .bash_logout  .bashrc  .profile
 
-git@iZ2zeeutrttwr14jmp2cpcZ:~$ mkdir .ssh
-git@iZ2zeeutrttwr14jmp2cpcZ:~$ ls -a
+git@h2ze245d:~$ mkdir .ssh
+git@h2ze245d:~$ ls -a
 .  ..  .bash_logout  .bashrc  .profile  .ssh
 ```
 
 ### . 在git用户下查看.ssh目录下时候有authorized_keys文件, (如果不出意外的话肯定是没有的 我搽...)
   进入.ssh目录新建authorized_keys文件，至此我们接下来进行该文件中需要填写每个git客户端需要的公钥数据， 那这个数据那来呢，让我们接着看.
 ```bash
-git@iZ2zeeutrttwr14jmp2cpcZ:~/.ssh$ ls
+git@h2ze245d:~/.ssh$ ls
 authorized_keys
 ```
 
 ### 9. 生成git推送和拉取权限文件，生成rsa秘钥对文件
 生成RSA秘钥对时候需要输入密码，这个密码一定要记住后面要使用，而且以后的git克隆推送都需要,生成的文件*.pub为RSA公钥文件， 另外一个为RSA私钥文件。
 ```bash
-git@iZ2zeeutrttwr14jmp2cpcZ:~$ ssh-keygen -t rsa
+git@h2ze245d:~$ ssh-keygen -t rsa
 Generating public/private rsa key pair.
-Enter file in which to save the key (/home/git/.ssh/id_rsa): gaodongzi@126.com
+Enter file in which to save the key (/home/git/.ssh/id_rsa): key123@126.com
 Enter passphrase (empty for no passphrase):
 Enter same passphrase again:
-Your identification has been saved in gaodongzi@126.com.
-Your public key has been saved in gaodongzi@126.com.pub.
+Your identification has been saved in key123@126.com.
+Your public key has been saved in key123@126.com.pub.
 The key fingerprint is:
-SHA256:uT0cfuz+i8WFGMPVW3pAHp6NntFJdrVsfXY7NuVgY0Q git@iZ2zeeutrttwr14jmp2cpcZ
+SHA256:uT0cfuz+i8WFGMPVW3pAHp6NntFJdrVsfXY7NuVgY0Q git@h2ze245d
 The key's randomart image is:
 +---[RSA 2048]----+
 |             oE++|
@@ -87,32 +87,32 @@ The key's randomart image is:
 |           + o   |
 |           .+.o. |
 +----[SHA256]-----+
-git@iZ2zeeutrttwr14jmp2cpcZ:~$ ls
-gaodongzi@126.com  gaodongzi@126.com.pub
+git@h2ze245d:~$ ls
+key123@126.com  key123@126.com.pub
 ```
 
 ### 9.1 在win下使用Git安装自带工具Puttygen.exe生成*.ppk文件
 对于需要使用RSA秘钥对生成来源, 你可以使用win生成也可使用linux生成，
 本实例是在linux下生成并通过ssh工具到处到win下。
-gaodongzi@126.com, gaodongzi@126.com.pub
+key123@126.com, key123@126.com.pub
 运行Puttygen.exe 
 	--> Conversions 
-		--> Import Key 选择刚生成的gaodongzi@126.com 私钥文件 输入生成秘钥时候的秘钥-
-			-> Save private key 保存为gaodongzi.ppk文件
+		--> Import Key 选择刚生成的key123@126.com 私钥文件 输入生成秘钥时候的秘钥-
+			-> Save private key 保存为key123.ppk文件
 
-gaodongzi.ppk文件用作git克隆推送代码时候需要的秘钥文件。
+key123.ppk文件用作git克隆推送代码时候需要的秘钥文件。
  
 
-### 10.把生成的gaodongzi@126.com.pub公钥文件数据复制到git用户根目录隐藏文件夹.ssh里面的authorized_keys文件中，注意复制时候要保证文件一致。
+### 10.把生成的key123@126.com.pub公钥文件数据复制到git用户根目录隐藏文件夹.ssh里面的authorized_keys文件中，注意复制时候要保证文件一致。
 
 
 ### 11.在我们服务器上为git创建代码仓，以为这个是我们之后需要把代码推送拉取得地方
 我把代码仓放在服务器/opt目录下.切换到超级用户su root下创建git目录, 在git下及时使用sudo mkdir git 也是权限没有。
 ```bash
-root@iZ2zeeutrttwr14jmp2cpcZ:/opt# mkdir git
-root@iZ2zeeutrttwr14jmp2cpcZ:/opt# cd git
-root@iZ2zeeutrttwr14jmp2cpcZ:/opt/git# git init --bare project.git
-root@iZ2zeeutrttwr14jmp2cpcZ:/opt/git/project.git# ls
+root@h2ze245d:/opt# mkdir git
+root@h2ze245d:/opt# cd git
+root@h2ze245d:/opt/git# git init --bare project.git
+root@h2ze245d:/opt/git/project.git# ls
 branches  config  description  HEAD  hooks  info  objects  refs
 ```
 
@@ -124,22 +124,22 @@ git@139.10.107.141:/opt/git/project.git, 不用多想ip地址肯定是假的
 ### 13. 任务尚未完成还需继续...
 使用git用户登录查看/opt/git目录权限
 ```bash
-git@iZ2zeeutrttwr14jmp2cpcZ:/opt$ ls -l
+git@h2ze245d:/opt$ ls -l
 total 4
 drwxr-xr-x 3 root root 4096 Dec 28 14:55 git
 ```
 切换到root用户对git目录进行权限修改
 ```bash
-root@iZ2zeeutrttwr14jmp2cpcZ:/opt# chown -R git:git git
-root@iZ2zeeutrttwr14jmp2cpcZ:/opt# chmod 777 git
-root@iZ2zeeutrttwr14jmp2cpcZ:/opt# ls -l
+root@h2ze245d:/opt# chown -R git:git git
+root@h2ze245d:/opt# chmod 777 git
+root@h2ze245d:/opt# ls -l
 total 4
 drwxrwxrwx 3 git git 4096 Dec 28 14:55 git
 ```
 
 再切换会git用户查看权限，这下文件夹git具有读写权限了。我们可以放下使用了。
 ```bash
-git@iZ2zeeutrttwr14jmp2cpcZ:/opt$ ls -l
+git@h2ze245d:/opt$ ls -l
 total 4
 drwxrwxrwx 3 git git 4096 Dec 28 14:55 git
 ```
