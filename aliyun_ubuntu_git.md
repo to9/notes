@@ -41,3 +41,19 @@
 		Home Phone []:
 		Other []:
 	Is the information correct? [Y/n] y
+
+切换到git用户home目录下会多出来刚创建的用户git
+	root@iZ2zeeutrttwr14jmp2cpcZ:/home# ls
+	admin  git
+
+
+#### 7. 查看用户跟目录隐藏文件夹是否有.ssh文件夹, 如果没有则创建.ssh目录
+	root@iZ2zeeutrttwr14jmp2cpcZ:/home# su git
+	git@iZ2zeeutrttwr14jmp2cpcZ:/home$ cd
+	git@iZ2zeeutrttwr14jmp2cpcZ:~$ ls -a
+	.  ..  .bash_logout  .bashrc  .profile
+
+	git@iZ2zeeutrttwr14jmp2cpcZ:~$ mkdir .ssh
+	git@iZ2zeeutrttwr14jmp2cpcZ:~$ ls -a
+	.  ..  .bash_logout  .bashrc  .profile  .ssh
+
