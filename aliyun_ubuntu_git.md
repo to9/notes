@@ -66,3 +66,33 @@ git@iZ2zeeutrttwr14jmp2cpcZ:~$ ls -a
 git@iZ2zeeutrttwr14jmp2cpcZ:~/.ssh$ ls
 authorized_keys
 ```
+
+9. 生成git推送和拉取权限文件，生成rsa秘钥对文件
+生成RSA秘钥对时候需要输入密码，这个密码一定要记住后面要使用，而且以后的git克隆推送都需要
+```
+git@iZ2zeeutrttwr14jmp2cpcZ:~$ ssh-keygen -t rsa
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/git/.ssh/id_rsa): gaodongzi@126.com
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in gaodongzi@126.com.
+Your public key has been saved in gaodongzi@126.com.pub.
+The key fingerprint is:
+SHA256:uT0cfuz+i8WFGMPVW3pAHp6NntFJdrVsfXY7NuVgY0Q git@iZ2zeeutrttwr14jmp2cpcZ
+The key's randomart image is:
++---[RSA 2048]----+
+|             oE++|
+|           . ==*B|
+|            + @B@|
+|         .   BoX*|
+|        S . . +*o|
+|         = o ...o|
+|        . = o o  |
+|           + o   |
+|           .+.o. |
++----[SHA256]-----+
+git@iZ2zeeutrttwr14jmp2cpcZ:~$ ls
+gaodongzi@126.com  gaodongzi@126.com.pub
+```
+
+生成的文件*.pub为RSA公钥文件， 另外一个为RSA私钥文件。
