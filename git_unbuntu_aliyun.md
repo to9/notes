@@ -9,7 +9,7 @@
 ### 3. 服务器上Git协议 本文实例使用的是ssh
 
 ### 4. 环境确认，是否装SSH，Git， 以SSH已经安装好为例子，(阿里云Ubuntu主机已经安装好SSH)
-- 当前SSH是否安装<font color=red>y</font>
+- 当前SSH是否安装 **(y)**
 ```bash
 root@h2ze245d:/# ssh
 usage: ssh [-1246AaCfGgKkMNnqsTtVvXxYy] [-b bind_address] [-c cipher_spec]
@@ -19,7 +19,7 @@ usage: ssh [-1246AaCfGgKkMNnqsTtVvXxYy] [-b bind_address] [-c cipher_spec]
            [-Q query_option] [-R address] [-S ctl_path] [-W host:port]
            [-w local_tun[:remote_tun]] [user@]hostname [command]
 ```
-- 当前Git是否安装(n)
+- 当前Git是否安装 **(n)**
 ```bash
 root@h2ze245d:/# 
 The program 'git' is currently not installed. You can install it by typing:
