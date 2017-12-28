@@ -71,17 +71,13 @@ git@iZ2zeeutrttwr14jmp2cpcZ:~$ ls -a
 
 9.1 在win下使用Git安装自带工具Puttygen.exe生成*.ppk文件
 对于需要使用RSA秘钥对生成来源, 你可以使用win生成也可使用linux生成，
-本实例是在linux下生成并通过ssh工具到处到win下。
+本实例是在linux下生成并通过ssh工具到处到win下.
 gaodongzi@126.com, gaodongzi@126.com.pub
 运行Puttygen.exe 
 	--> Conversions 
 		--> Import Key 选择刚生成的123456@126.com 私钥文件 输入生成秘钥时候的秘钥-
 			-> Save private key 123456.ppk文件
 
-123456.ppk文件用作git克隆推送代码时候需要的秘钥文件。
+123456.ppk文件用作git克隆推送代码时候需要的秘钥文件.
  
 10. 把生成公钥文件数据复制到用户根目录隐藏文件夹里面的文件中，注意复制时候要保证文件一致.
-```
-123456
-```
-
