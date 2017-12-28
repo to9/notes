@@ -8,13 +8,25 @@
 
 ### 3. 服务器上Git协议 本文实例使用的是ssh
 
-### 4. 环境确认，是否装ssh，git， 以ssh已经安装好为例子，(阿里云ubuntu主机已经安装好ssh)
-试着运行git看看当前环境是否已经安装了。
+### 4. 环境确认，是否装SSH，Git， 以SSH已经安装好为例子，(阿里云Ubuntu主机已经安装好SSH)
+- 当前SSH是否安装(y)
+```bash
+root@h2ze245d:/# ssh
+usage: ssh [-1246AaCfGgKkMNnqsTtVvXxYy] [-b bind_address] [-c cipher_spec]
+           [-D [bind_address:]port] [-E log_file] [-e escape_char]
+           [-F configfile] [-I pkcs11] [-i identity_file] [-L address]
+           [-l login_name] [-m mac_spec] [-O ctl_cmd] [-o option] [-p port]
+           [-Q query_option] [-R address] [-S ctl_path] [-W host:port]
+           [-w local_tun[:remote_tun]] [user@]hostname [command]
+```
+- 当前Git是否安装(n)
 ```bash
 root@h2ze245d:/# 
 The program 'git' is currently not installed. You can install it by typing:
 sudo apt-get install git
 ```
+-  
+
 ### 5. Git安装
 先运行apt-get update, update作用是从/etc/apt/source.list文件中定义的源中去同步包的索引文件，根据索引检查更新，获取的是软件的包的一些	                  状态信息从而保证要接下来下载的是最新版本.
 
