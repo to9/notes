@@ -78,11 +78,6 @@ Enter passphrase (empty for no passphrase):
 Enter same passphrase again:
 Your identification has been saved in gaodongzi@126.com.
 Your public key has been saved in gaodongzi@126.com.pub.
-The key fingerprint is:
-SHA256:uT0cfuz+i8WFGMPVW3pAHp6NntFJdrVsfXY7NuVgY0Q git@iZ2zeeutrttwr14jmp2cpcZ
-The key's randomart image is:
-
-
 git@iZ2zeeutrttwr14jmp2cpcZ:~$ ls
 gaodongzi@126.com  gaodongzi@126.com.pub
 ```
