@@ -68,8 +68,7 @@ git@iZ2zeeutrttwr14jmp2cpcZ:~/.ssh$ ls
 authorized_keys
 ```
 
-9. 生成git推送和拉取权限文件，生成rsa秘钥对文件
-生成RSA秘钥对时候需要输入密码，这个密码一定要记住后面要使用，而且以后的git克隆推送都需要
+9. 生成git推送和拉取权限文件，生成rsa秘钥对文件,生成RSA秘钥对时候需要输入密码，这个密码一定要记住后面要使用，而且以后的git克隆推送都需要
 ```
 git@iZ2zeeutrttwr14jmp2cpcZ:~$ ssh-keygen -t rsa
 Generating public/private rsa key pair.
