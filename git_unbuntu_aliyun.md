@@ -144,7 +144,7 @@ key123.ppk文件用作git克隆推送代码时候需要的秘钥文件。
 把生成的key123@126.com.pub公钥文件数据复制到git用户根目录隐藏文件夹.ssh里面的authorized_keys文件中，注意复制时候要保证文件一致。
 
 ### 11.创建初始化代码仓
-在我们服务器上为git创建代码仓，以为这个是我们之后需要把代码推送拉取得地方，我把代码仓放在服务器/opt目录下.切换到超级用户su root下创建repo_server目录。git用户没有权限在opt下创建目录,如需要git用户在opt目录下创建目录需要root改opt目录权限。
+我们服务器上为git创建代码仓，这个是我们用来存储客户端push操作后存放代码的地方，我把代码仓放在服务器/opt目录下.切换到超级用户su root下创建repo_server目录。git用户没有权限在opt下创建目录,如需要git用户在opt目录下创建目录需要root改opt目录权限。
 ```bash
 root@h2ze245d:/opt# mkdir repo_server
 root@h2ze245d:/opt# cd repo_server
