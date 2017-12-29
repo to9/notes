@@ -146,16 +146,16 @@ key123.ppk文件用作git克隆推送代码时候需要的秘钥文件。
 ### 11.创建初始化代码仓
 在我们服务器上为git创建代码仓，以为这个是我们之后需要把代码推送拉取得地方，我把代码仓放在服务器/opt目录下.切换到超级用户su root下创建git目录, 在git下及时使用sudo mkdir git 也是权限没有。
 ```bash
-root@h2ze245d:/opt# mkdir git
-root@h2ze245d:/opt# cd git
-root@h2ze245d:/opt/git# git init --bare project.git
-root@h2ze245d:/opt/git/project.git# ls
+root@h2ze245d:/opt# mkdir repo_server
+root@h2ze245d:/opt# cd repo_server
+root@h2ze245d:/opt/repo_server# git init --bare hexo.git
+root@h2ze245d:/opt/repo_server/hexo.git# ls
 branches  config  description  HEAD  hooks  info  objects  refs
 ```
 
 ### 12. win下测试版本库
 至于windows下git使用这篇文章暂时先不介绍，自行补脑后再继续。你也可以再linux下直接测试。
-git@139.10.107.141:/opt/git/project.git, 不用多想ip地址肯定是假的
+git@139.10.107.141:/opt/repo_server/hexo.git, 不用多想ip地址肯定是假的
 成功克隆服务器版本库后，修改版本库里面文件然后在推送，(如果不出意外的话,推送不上去， 我搽.....)
 
 ### 13. git目录权限
@@ -165,20 +165,20 @@ git@h2ze245d:/opt$ ls -l
 total 4
 drwxr-xr-x 3 root root 4096 Dec 28 14:55 git
 ```
-切换到root用户对git目录进行权限修改
+切换到root用户对git目录进行权限修改， 改仓库项目文件夹repo_server为git
 ```bash
-root@h2ze245d:/opt# chown -R git:git git
-root@h2ze245d:/opt# chmod 777 git
+root@h2ze245d:/opt# chown -R git:git repo_server
+root@h2ze245d:/opt# chmod 777 repo_server
 root@h2ze245d:/opt# ls -l
 total 4
-drwxrwxrwx 3 git git 4096 Dec 28 14:55 git
+drwxrwxrwx 3 git git 4096 Dec 28 14:55 repo_server
 ```
 
 再切换会git用户查看权限，这下文件夹git具有读写权限了。我们可以放下使用了。
 ```bash
 git@h2ze245d:/opt$ ls -l
 total 4
-drwxrwxrwx 3 git git 4096 Dec 28 14:55 git
+drwxrwxrwx 3 git git 4096 Dec 28 14:55 repo_server
 ```
 
 到此...在服务器上部署Git算完成了
