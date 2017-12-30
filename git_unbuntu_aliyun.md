@@ -15,6 +15,7 @@
 * [创建初始化代码仓](#11)
 * [win下测试版本库](#12)
 * [git目录权限](#13)
+* [自动部署](#14)
 
 ****
 
@@ -190,7 +191,24 @@ drwxrwxrwx 3 git git 4096 Dec 28 14:55 repo_server
 到此...在服务器上部署Git算完成了
 如果是多人使用，我么还需要gitosis来管理没个人的秘钥。如果你没疯那让我们继续...
 
+### 14. 自动部署
+如果Git需要实现自动部署功能的话，我们需要在代码仓hooks目录下必须有个脚本文件，至于需要那种类型脚本文件可以参看git官方说明。
+在这里我们主要实现的功能是当客户端代码推送(push)完成后，服务端Git仓会自动clone一份客户端所有代码到我们需要的目录，这也就是web自动部署功能。hooks目录下post-receive类型脚本就是我们所需要的功能。脚本里面内容根据我么自己需求进行编写。
 
+注意点:
+- ssh生成秘钥应该在git用户下进行
+- git权限问题
+- post-receive 文件应该具有执行权限
+- 我们将要拉取存放内容的文件夹必须具有写入权限
+
+```
+git@iZ2zeeutrttwr14jmp2cpcZ:/opt/repo_server/hexo.git/hooks$ ls -l
+-rwxrwxrwx 1 git git  101 Dec 30 13:03 post-receive
+
+#!/bin/bash
+rm -rf /opt/repo_local/hexo
+git clone /opt/repo_server/hexo.git /opt/repo_local/hexo
+```
 
 
 #### 参考：
