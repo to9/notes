@@ -128,6 +128,12 @@ The key's randomart image is:
 git@h2ze245d:~$ ls
 key123@126.com  key123@126.com.pub
 ```
+
+使用cat指令把公钥key123@126.com.pub中的内容，插入在authorized_keys文件尾.
+```bash
+git@iZ2zeeutrttwr14jmp2cpcZ:~/.ssh$ cat key123@126.com.pub >>authorized_keys
+```
+
 在win下使用Git安装自带工具Puttygen.exe生成*.ppk文件
 对于需要使用RSA秘钥对生成来源, 你可以使用win生成也可使用linux生成，
 本实例是在linux下生成并通过ssh工具到处到win下。
