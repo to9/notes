@@ -36,6 +36,7 @@ npm install -g hexo
 
 hexo 会安装到这里
   C:\Users\Administrator\AppData\Roaming\npm\node_modules
+  
   C:\Users\Administrator\AppData\Roaming\npm-cache
   
 - 初始化hexo到你指定的目录， 也可以cd到目标目录，执行hexo init
