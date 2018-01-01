@@ -35,6 +35,7 @@ v9.3.0
 npm install -g hexo
 
 hexo 会安装到这里
+
   C:\Users\Administrator\AppData\Roaming\npm\node_modules
   
   C:\Users\Administrator\AppData\Roaming\npm-cache
