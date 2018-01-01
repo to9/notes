@@ -62,3 +62,8 @@ vim node_modules/hexo-server/index.js, 修改port到指定端口。
 使用Hexo
 1. 写文章
 +hexo new [layout] "postName" #新建文章
+
+### 更换主题
+- git clone https://github.com/iissnan/hexo-theme-next themes/next
+
+
