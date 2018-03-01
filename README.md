@@ -1,17 +1,23 @@
 ## 关于github的README.md文件编写
 
-**README.md** 使用的是Markdown语言编写</br>
+**README.md** 使用的是Markdown语言编写
 
-* [Markdown语法说明-简体中文](http://wowubuntu.com/markdown/index.html)</br>
-* [Markdown在线编译器](http://mahua.jser.me/)</br>
+* [Markdown语法说明-简体中文](http://wowubuntu.com/markdown/index.html)
 
-**Github 徽章**</br>
+* [Markdown在线编译器](http://mahua.jser.me/)
+
+**Github 徽章**
+
 参考：
-* https://github.com/vuejs/vue</br>
-* http://shields.io/</br>
 
-**国外源码网址**</br>
-https://www.codeproject.com/
+* https://github.com/vuejs/vue
+
+* http://shields.io/
+
+**国外源码网址**
+
+* https://www.codeproject.com/
 
 **Excel表格转markdown**
-https://github.com/fanfeilong/exceltk
+
+* https://github.com/fanfeilong/exceltk
