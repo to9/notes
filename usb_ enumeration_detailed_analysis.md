@@ -1,22 +1,19 @@
-USB协议枚举分析
+# USB协议枚举分析
 所有的USB通信的数据流都是由主控器发起，其它从设备进行响应。
-从设备的描述符
-完整的设备描述符和配置描述符见代码片段
 
-
-
-HID键盘 一次完整枚举过程及数据：
+## HID键盘 一次完整枚举过程及数据：
 以下描述中“主机”指的是PC的USB主控制器，“设备”指插入USB接口的设备。
-## 1.	Reset
+
+### 1.	Reset
 复位设备
 
-## 2.	Suspended
+### 2.	Suspended
 
-## 3.	Reset
+### 3.	Reset
 
-## 4.	High speed Detection Handshake
+### 4.	High speed Detection Handshake
 
-## 5.	GetDescriptor (Device)
+### 5.	GetDescriptor (Device)
 枚举的第一个请求中，主机试图获取设备描述符来确定默认设备(端点0)的最大包大小。
 主控制器发出包：80 06 00 01 00 00 40 00，其中设备描述符中40给出当前主控制器允许接收最大包大小为64个字节。
 从设备应答包：
@@ -58,11 +55,11 @@ Device descriptor:
 | iSerialNumber      | Not available                       | ?   | ?      |
 | bNumConfigurations | Not available                       | ?   | ?      |
 
-## 6.	Reset
+### 6.	Reset
 
-## 7.	High speed Detection Handshake
+### 7.	High speed Detection Handshake
 
-## 8.	SetAddress (1)
+### 8.	SetAddress (1)
 主控制器分配从设备设备的设备地址。范围为0 – 127。
 主控制器发出包：00 05 01 00 00 00 00 00，告知从设备当前从设备地址为1，同设备在其他电脑可能分配地址00 05 16 00 00 00 00 00， 地址22。
 
@@ -85,7 +82,7 @@ Setup request:
 | wIndex                  | Zero           |    0 | 0x00 |
 | wLength                 | 0              |    0 | 0x00 |
 
-## 9.	GetDescriptor (Device)
+### 9.	GetDescriptor (Device)
 主控制器根据之前发出“获取设备描述符”包，得知设备(端点0)最大包大小。再次获取从设备的全部”设备描述符”数据包。
 
 主控制器发出包：
@@ -128,7 +125,7 @@ Setup request:
 | bNumConfigurations      | 1                                   | 　     | 　     |
 
 
-## 10.	GetDescriptor (Configuration)
+### 10.	GetDescriptor (Configuration)
 主控制器发出包：80 06 00 02 00 00 09 00获取部分设备“配置描述符大小信息”，从设备应收到后给出该应答包，其包大小不应该大于主控制器待能接收最大长度09 00(9) 字节数据。从设发送配置描述符前9字节信息09 02 22 00 01 01 00 A0 FA。前9字节中第3和4字节wTotalLength包含了当前从设备“配置描述符”大小信息。之后设备会再一次获取该从设备“配置描述符”数据，其获取长度根据第一次返回的长度适当调整主控制器允许接收数据长度包80 06 00 02 00 00 FF 00，主控制器允许接收最大长度为FF 00(255字节)。
 
 主控制器发出包：80 06 00 02 00 00 09 00
@@ -161,7 +158,7 @@ Setup request:
 | bmAttributes. Reserved7    | One               | 1      | 0x1    |
 | bMaxPower                  | 500 mA            | 250    | 0xFA   |
 
-## 11.	GetDescriptor (Configuration)
+### 11.	GetDescriptor (Configuration)
 
 主控制器发出包：80 06 00 02 00 00 FF 00
 
@@ -230,7 +227,7 @@ Endpoint descriptor:
 | wMaxPacketSize             | 8 bytes           | 8      | 0x0008 |
 | bInterval                  | 10 frames (10 ms) | 10     | 0x0A   |
 
-## 12.	GetDescriptor (String lang IDs)
+### 12.	GetDescriptor (String lang IDs)
 
 主控制器发出包：80 06 00 03 00 00 FF 00
 
@@ -257,7 +254,7 @@ String descriptor:
 | wLANGID[0]      | English (US) | 1033   | 0x0409 |
 
 
-## 13.	GetDescriptor (String iProduct)
+### 13.	GetDescriptor (String iProduct)
 
 主控制器发出包：80 06 02 03 09 04 FF 00
 
@@ -281,7 +278,7 @@ String descriptor:
 | Content         | "Joystick in FS Mode" |        | 0x1    |
 
 
-## 14.	GetDescriptor (String lang IDs)
+### 14.	GetDescriptor (String lang IDs)
 主控制器发出包：80 06 00 03 00 00 FF 00
 
 Setup request:
@@ -307,17 +304,17 @@ String descriptor:
 | wLANGID[0]      | English (US) | 1033   | 0x0409 |
 
 
-## 15.	GetDescriptor (String iProduct)
+### 15.	GetDescriptor (String iProduct)
 
-## 16.	GetDescriptor (Device)
+### 16.	GetDescriptor (Device)
 
-## 17.	GetDescriptor (Configuration)
+### 17.	GetDescriptor (Configuration)
 
-## 18.	GetDescriptor (Configuration)
+### 18.	GetDescriptor (Configuration)
 09 02 22 00 01 01 00 A0 FA 09 04 00 00 01 03 01 01 00 
 09 21 10 01 00 01 22 41 00 07 05 81 03 08 00 0A
 
-## 19.	SetConfiguration (1)No data		
+### 19.	SetConfiguration (1)No data		
 主控制器发出包：00 09 01 00 00 00 00 00
 
 Setup request:
@@ -335,7 +332,7 @@ Setup request:
 从设备应答包：No data
 
 
-## 20.	Class request OUT (0x0A)No data
+### 20.	Class request OUT (0x0A)No data
 
 主控制器发出包：21 0A 00 00 00 00 00 00
 
@@ -354,7 +351,7 @@ Setup request:
 从设备应答包：No data
 
 
-## 21.	GetDescriptor (Class: 0x22)
+### 21.	GetDescriptor (Class: 0x22)
 
 主控制器发出包：81 06 00 22 00 00 81 00
 
@@ -380,7 +377,7 @@ Unknown class-specific descriptor:
 |:------------------------|:---------------|-------:|-------:|
 | Data                    | 65 bytes       |        |        |
 
-## 22.	Class request OUT (0x09)
+### 22.	Class request OUT (0x09)
 主控制器发出包：21 09 00 02 00 00 01 00
 
 Setup request:
