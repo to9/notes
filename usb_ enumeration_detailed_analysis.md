@@ -426,6 +426,7 @@ Setup request:
 <h2 id="2">2. 描述符(代码)</h2>
 
 <h3 id="2.1">2.1 设备描述符</h3>
+
 ```c
 //USB Standard Device Descriptor
 uint8_t USBD_DeviceDesc[18] =
@@ -463,6 +464,7 @@ uint8_t USBD_DeviceDesc[18] =
 ```
 
 <h3 id="2.2">2.2 配置描述符</h3>
+
 ```C
 //USB HID device Configuration Descriptor 
 static uint8_t USBD_HID_CfgDesc[34] =
