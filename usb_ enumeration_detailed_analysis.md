@@ -25,19 +25,6 @@ HID键盘 一次完整枚举过程及数据：
 
 主控制器发出包80 06 00 01 00 00 40 00
 
-
-|Setup request||||
-|:--|:--|--:|--:|
-|Name|Value|Dec|Hex|
-|bmRequestType.Recipient|Device|0|0x00|
-|bmRequestType.Type|Standard|0|0x00|
-|bmRequestType.Direction|Device-to-host|1|0x01|
-|bRequest|GET_DESCRIPTOR|6|0x06|
-|wValue|DEVICE|256|0x0100|
-|wIndex|Zero|0|0x0000|
-|wLength|64|64|0x0040|
-
-
 | Name                    | Value          |  Dec |     Hex |
 | :---------------------- | :------------- | ---: | ------: |
 | bmRequestType.Recipient | Device         |    0 |    0x00 |
