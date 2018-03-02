@@ -42,9 +42,9 @@
 
 <h3 id="1.3">1.3 Reset</h3>
 
-### 4.	High speed Detection Handshake
+<h3 id="1.4">1.4 High speed Detection Handshake</h3>
 
-### 5.	GetDescriptor (Device)
+<h3 id="1.5">1.5 GetDescriptor (Device)</h3>
 枚举的第一个请求中，主机试图获取设备描述符来确定默认设备(端点0)的最大包大小。
 主控制器发出包：80 06 00 01 00 00 40 00，其中设备描述符中40给出当前主控制器允许接收最大包大小为64个字节。
 从设备应答包：
@@ -86,11 +86,11 @@ Device descriptor:
 | iSerialNumber      | Not available                       | ?   | ?      |
 | bNumConfigurations | Not available                       | ?   | ?      |
 
-### 6.	Reset
+<h3 id="1.6">1.6 Reset</h3>
 
-### 7.	High speed Detection Handshake
+<h3 id="1.7">1.7 High speed Detection Handshake</h3>
 
-### 8.	SetAddress
+<h3 id="1.8">1.8 SetAddress</h3>
 主控制器分配从设备设备的设备地址。范围为0 – 127。
 主控制器发出包：00 05 01 00 00 00 00 00，告知从设备当前从设备地址为1，同设备在其他电脑可能分配地址00 05 16 00 00 00 00 00， 地址22。
 
@@ -113,7 +113,7 @@ Setup request:
 | wIndex                  | Zero           |    0 | 0x00 |
 | wLength                 | 0              |    0 | 0x00 |
 
-### 9.	GetDescriptor (Device)
+<h3 id="1.9">1.9 GetDescriptor (Device)</h3>
 主控制器根据之前发出“获取设备描述符”包，得知设备(端点0)最大包大小。再次获取从设备的全部”设备描述符”数据包。
 
 主控制器发出包：
@@ -155,8 +155,7 @@ Setup request:
 | iSerialNumber           | 0                                   | 0      | 0x00   |
 | bNumConfigurations      | 1                                   | 　     | 　     |
 
-
-### 10.	GetDescriptor (Configuration)
+<h3 id="1.10">1.10 GetDescriptor (Configuration)</h3>
 主控制器发出包：80 06 00 02 00 00 09 00获取部分设备“配置描述符大小信息”，从设备应收到后给出该应答包，其包大小不应该大于主控制器待能接收最大长度09 00(9) 字节数据。从设发送配置描述符前9字节信息09 02 22 00 01 01 00 A0 FA。前9字节中第3和4字节wTotalLength包含了当前从设备“配置描述符”大小信息。之后设备会再一次获取该从设备“配置描述符”数据，其获取长度根据第一次返回的长度适当调整主控制器允许接收数据长度包80 06 00 02 00 00 FF 00，主控制器允许接收最大长度为FF 00(255字节)。
 
 主控制器发出包：80 06 00 02 00 00 09 00
@@ -189,8 +188,7 @@ Setup request:
 | bmAttributes. Reserved7    | One               | 1      | 0x1    |
 | bMaxPower                  | 500 mA            | 250    | 0xFA   |
 
-### 11.	GetDescriptor (Configuration)
-
+<h3 id="1.11">1.11 GetDescriptor (Configuration)</h3>
 主控制器发出包：80 06 00 02 00 00 FF 00
 
 Setup request:
@@ -258,8 +256,7 @@ Endpoint descriptor:
 | wMaxPacketSize             | 8 bytes           | 8      | 0x0008 |
 | bInterval                  | 10 frames (10 ms) | 10     | 0x0A   |
 
-### 12.	GetDescriptor (String lang IDs)
-
+<h3 id="1.12">1.12 GetDescriptor (String lang IDs)</h3>
 主控制器发出包：80 06 00 03 00 00 FF 00
 
 Setup request:
@@ -285,8 +282,7 @@ String descriptor:
 | wLANGID[0]      | English (US) | 1033   | 0x0409 |
 
 
-### 13.	GetDescriptor (String iProduct)
-
+<h3 id="1.13">1.13 GetDescriptor (String iProduct)</h3>
 主控制器发出包：80 06 02 03 09 04 FF 00
 
 | Name                    | Value          | Dec    | Hex    |
@@ -309,7 +305,7 @@ String descriptor:
 | Content         | "Joystick in FS Mode" |        | 0x1    |
 
 
-### 14.	GetDescriptor (String lang IDs)
+<h3 id="1.14">1.14 GetDescriptor (String lang IDs)</h3>
 主控制器发出包：80 06 00 03 00 00 FF 00
 
 Setup request:
@@ -334,18 +330,17 @@ String descriptor:
 | bDescriptorType | STRING       | 3      | 0x03   |
 | wLANGID[0]      | English (US) | 1033   | 0x0409 |
 
+<h3 id="1.15">1.15 GetDescriptor (String iProduct)</h3>
 
-### 15.	GetDescriptor (String iProduct)
+<h3 id="1.16">1.16 GetDescriptor (Device)</h3>
 
-### 16.	GetDescriptor (Device)
+<h3 id="1.17">1.17 GetDescriptor (Configuration)</h3>
 
-### 17.	GetDescriptor (Configuration)
-
-### 18.	GetDescriptor (Configuration)
+<h3 id="1.18">1.18 GetDescriptor (Configuration)</h3>
 09 02 22 00 01 01 00 A0 FA 09 04 00 00 01 03 01 01 00 
 09 21 10 01 00 01 22 41 00 07 05 81 03 08 00 0A
 
-### 19.	SetConfiguration (1)No data		
+<h3 id="1.19">1.19 SetConfiguration (1)No data</h3>		
 主控制器发出包：00 09 01 00 00 00 00 00
 
 Setup request:
@@ -363,8 +358,7 @@ Setup request:
 从设备应答包：No data
 
 
-### 20.	Class request OUT (0x0A)No data
-
+<h3 id="1.20">1.20 Class request OUT (0x0A)No data</h3>
 主控制器发出包：21 0A 00 00 00 00 00 00
 
 Setup request:
@@ -381,9 +375,7 @@ Setup request:
 
 从设备应答包：No data
 
-
-### 21.	GetDescriptor (Class: 0x22)
-
+<h3 id="1.21">1.21 GetDescriptor (Class: 0x22)</h3>
 主控制器发出包：81 06 00 22 00 00 81 00
 
 Setup request:
@@ -408,7 +400,8 @@ Unknown class-specific descriptor:
 |:------------------------|:---------------|-------:|-------:|
 | Data                    | 65 bytes       |        |        |
 
-### 22.	Class request OUT (0x09)
+
+<h3 id="1.22">1.22 Class request OUT (0x09)</h3>
 主控制器发出包：21 09 00 02 00 00 01 00
 
 Setup request:
@@ -425,7 +418,7 @@ Setup request:
 
 从设备应答包：00
 
-### 2. 设备描述符
+<h2 id="2.">2. 设备描述符</h2>
 
 ```c
 //USB Standard Device Descriptor
