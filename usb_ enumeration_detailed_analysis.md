@@ -57,8 +57,6 @@
 
 Setup request:
 
-| Setup request                                             |
-| :-------------------------------------------------------- |
 | Name                    | Value          |  Dec |     Hex |
 | :---------------------- | :------------- | ---: | ------: |
 | bmRequestType.Recipient | Device         |    0 |    0x00 |
@@ -82,7 +80,7 @@ Device descriptor:
 | bDeviceSubClass    | Subclass defined at interface level | 0   | 0x00   |
 | bDeviceProtocol    | None                                | 0   | 0x00   |
 | bMaxPacketSize0    | 64                                  | 64  | 0x40   |
-| idVendor           | Not available                       | ?   | ?      |
+| idVendor           | Not available                       | ？  | ?      |
 | idProduct          | Not available                       | ?   | ?      |
 | bcdDevice          | Not available                       | ?   | ?      |
 | iManufacturer      | Not available                       | ?   | ?      |
