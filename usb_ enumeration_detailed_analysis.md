@@ -25,7 +25,9 @@
 * [1.20 Class request OUT (0x0A)No data](#1.20)
 * [1.21 GetDescriptor (Class: 0x22)](#1.21)
 * [1.22 Class request OUT (0x09)](#1.22)
-* [2. 设备描述符](#2)
+* [2. 描述符(代码)](#2)
+* [2.1 设备描述符](#2.1)
+* [2.2 配置描述符](#2.2)
 
 ****
 
@@ -418,8 +420,12 @@ Setup request:
 
 从设备应答包：00
 
-<h2 id="2.">2. 设备描述符</h2>
 
+
+
+<h2 id="2">2. 描述符(代码)</h2>
+
+<h3 id="2.1">2.1 设备描述符</h3>
 ```c
 //USB Standard Device Descriptor
 uint8_t USBD_DeviceDesc[18] =
@@ -456,7 +462,7 @@ uint8_t USBD_DeviceDesc[18] =
 } ;
 ```
 
-### 配置描述符
+<h3 id="2.2">2.2 配置描述符</h3>
 ```C
 //USB HID device Configuration Descriptor 
 static uint8_t USBD_HID_CfgDesc[34] =
