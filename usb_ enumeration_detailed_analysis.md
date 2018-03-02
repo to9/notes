@@ -177,9 +177,227 @@ Setup request:
 | wIndex                  | Zero              | 0      | 0x0000 | 
 | wLength                 | 255               | 255    | 0x00FF | 
 
+从设备应答包：09 02 22 00 01 01 00 A0 FA 09 04 00 00 01 03 01 01 00 09 21 10 01 00 01 22 41 00 07 05 81 03 08 00 0A
+
+Configuration descriptor:
+
+| Name                       | Value             | Dec    | Hex    |
+|:---------------------------|:------------------|-------:|-------:|
+| bLength                    | Valid             | 9      | 0x09   |
+| bDescriptorType            | CONFIGURATION     | 2      | 0x02   |
+| wTotalLength               | 34 bytes          | 34     | 0x0022 |
+| bNumInterface              | 1                 | 1      | 0x01   |
+| bConfigurationValue        | 1                 | 1      | 0x01   |
+| iConfiguration             | 0                 | 0      | 0x00   |
+| bmAttributes. Reserved     | Zero              | 0      | 0x00   |
+| bmAttributes. RemoteWakeup | Supported         | 1      | 0x1    |
+| bmAttributes. SelfPowered  | No, Bus Powered   | 0      | 0x0    |
+| bmAttributes. Reserved7    | One               | 1      | 0x1    |
+| bMaxPower                  | 500 mA            | 250    | 0xFA   |
+
+Interface descriptor:
+
+| Name               | Value                                         | Dec    | Hex    |
+|:-------------------|:----------------------------------------------|-------:|-------:|
+| bLength            | Valid                                         | 9      | 0x09   |
+| bDescriptorType    | INTERFACE                                     | 4      | 0x04   |
+| bInterfaceNumber   | 0                                             | 0      | 0x00   |
+| bAlternateSetting  | 0                                             | 0      | 0x00   |
+| bNumEndpoints      | 1                                             | 1      | 0x01   |
+| bInterfaceClass    | Human Interface Device (Find?out?more?online) | 3      | 0x03   |
+| bInterfaceSubClass | Boot Interface                                | 1      | 0x01   |
+| bInterfaceProtocol | Keyboard                                      | 1      | 0x01   |
+| iInterface         | 0                                             | 0      | 0x00   |
+
+Class descriptor:
+
+| Name                      | Value       | Dec    | Hex    |
+|:--------------------------|:------------|-------:|-------:|
+| bLength                   | Valid       | 9      | 0x09   |
+| bDescriptorType           | Class: 0x21 | 33     | 0x21   |
+| Remaining descriptor data | 7 bytes     | 　     | 　     |
 
 
+Endpoint descriptor:
 
+| Name                       | Value             | Dec    | Hex    |
+|:---------------------------|:------------------|-------:|-------:|
+| bLength                    | Valid             | 7      | 0x07   |
+| bDescriptorType            | ENDPOINT          | 5      | 0x05   |
+| bEndpointAddress           | 1 IN              | 129    | 0x81   |
+| bmAttributes. TransferType | Interrupt         | 3      | 0x3    |
+| bmAttributes. Reserved     | Zero              | 0      | 0x00   |
+| wMaxPacketSize             | 8 bytes           | 8      | 0x0008 |
+| bInterval                  | 10 frames (10 ms) | 10     | 0x0A   |
+
+## 12.	GetDescriptor (String lang IDs)
+
+主控制器发出包：80 06 00 03 00 00 FF 00
+
+Setup request:
+
+| Name                    | Value          | Dec    | Hex    |
+|:------------------------|:---------------|-------:|-------:|
+| bmRequestType.Recipient | Device         | 0      | 0x00   |
+| bmRequestType.Type      | Standard       | 0      | 0x0    |
+| bmRequestType.Direction | Device-to-host | 1      | 0x1    |
+| bRequest                | GET_DESCRIPTOR | 6      | 0x06   |
+| wValue                  | STRING (0)     | 768    | 0x0300 |
+| wIndex                  | Zero           | 0      | 0x0000 |
+| wLength                 | 255            | 255    | 0x00FF |
+
+从设备应答包：04 03 09 04
+
+String descriptor:
+
+| Name            | Value        | Dec    | Hex    |
+|:----------------|:-------------|-------:|-------:|
+| bLength         | 4            | 4      | 0x04   |
+| bDescriptorType | STRING       | 3      | 0x03   |
+| wLANGID[0]      | English (US) | 1033   | 0x0409 |
+
+
+## 13.	GetDescriptor (String iProduct)
+
+主控制器发出包：80 06 02 03 09 04 FF 00
+
+| Name                    | Value          | Dec    | Hex    |
+|:------------------------|:---------------|-------:|-------:|
+| bmRequestType.Recipient | Device         | 0      | 0x00   |
+| bmRequestType.Type      | Standard       | 0      | 0x0    |
+| bmRequestType.Direction | Device-to-host | 1      | 0x1    |
+| bRequest                | GET_DESCRIPTOR | 6      | 0x06   |
+| wValue                  | STRING (2)     | 770    | 0x0302 |
+| wIndex                  | English (US)   | 1033   | 0x0409 |
+| wLength                 | 255            | 255    | 0x00FF |
+
+从设备应答包：28 03 4A 00 6F 00 79 00 73 00 74 00 69 00 63 00 6B 00 20 00 69 00 6E 00 
+20 00 46 00 53 00 20 00 4D 00 6F 00 64 00 65 00
+
+| Name            | Value                 | Dec    | Hex    |
+|:----------------|:----------------------|-------:|-------:|
+| bLength         | 40                    | 40     | 0x28   |
+| bDescriptorType | STRING                | 3      | 0x03   |
+| Content         | "Joystick in FS Mode" |        | 0x1    |
+
+
+## 14.	GetDescriptor (String lang IDs)
+主控制器发出包：80 06 00 03 00 00 FF 00
+
+Setup request:
+
+| Name                    | Value           | Dec    | Hex    |
+|:------------------------|:----------------|-------:|-------:|
+| bmRequestType.Recipient | Device          | 0      | 0x00   |
+| bmRequestType.Type      | Standard        | 0      | 0x0    |
+| bmRequestType.Direction | Device-to-host  | 1      | 0x1    |
+| bRequest                | GET_DESCRIPTOR  | 6      | 0x06   |
+| wValue                  | STRING (0)      | 768    | 0x0300 |
+| wIndex                  | Zero            | 0      | 0x0000 |
+| wLength                 | 255             | 255    | 0x00FF |
+
+从设备应答包：04 03 09 04
+
+String descriptor:
+
+| Name            | Value        | Dec    | Hex    |
+|:----------------|:-------------|-------:|-------:|
+| bLength         | 4            | 4      | 0x04   |
+| bDescriptorType | STRING       | 3      | 0x03   |
+| wLANGID[0]      | English (US) | 1033   | 0x0409 |
+
+
+## 15.	GetDescriptor (String iProduct)
+
+## 16.	GetDescriptor (Device)
+
+## 17.	GetDescriptor (Configuration)
+
+## 18.	GetDescriptor (Configuration)
+09 02 22 00 01 01 00 A0 FA 09 04 00 00 01 03 01 01 00 
+09 21 10 01 00 01 22 41 00 07 05 81 03 08 00 0A
+
+## 19.	SetConfiguration (1)No data		
+主控制器发出包：00 09 01 00 00 00 00 00
+
+Setup request:
+
+| Name                    | Value             | Dec    | Hex    |
+|:------------------------|:------------------|-------:|-------:|
+| bmRequestType.Recipient | Device            | 0      | 0      |
+| bmRequestType.Type      | Standard          | 0      | 0      |
+| bmRequestType.Direction | Host-to-device    | 0      | 0      |
+| bRequest                | SET_CONFIGURATION | 9      | 9      |
+| wValue                  | Configuration 1   | 1      | 1      |
+| wIndex                  | Zero              | 0      | 0      |
+| wLength                 | 0                 | 0      | 0      |
+
+从设备应答包：No data
+
+
+## 20.	Class request OUT (0x0A)No data
+
+主控制器发出包：21 0A 00 00 00 00 00 00
+
+Setup request:
+
+| Name                    | Value                              | Dec    | Hex    |
+|:------------------------|:-----------------------------------|-------:|-------:|
+| bmRequestType.Recipient | Interface                          | 1      | 0x01   |
+| bmRequestType.Type      | Class                              | 1      | 0x1    |
+| bmRequestType.Direction | Host-to-device                     | 0      | 0x0    |
+| bRequest                | Class: 0x0A (Findout moren online) | 10     | 0x0A   |
+| wValue                  | 0x0000                             | 0      | 0x0000 |
+| wIndex                  | 0x0000                             | 0      | 0x0000 |
+| wLength                 | 0                                  | 0      | 0x0000 |
+
+从设备应答包：No data
+
+
+## 21.	GetDescriptor (Class: 0x22)
+
+主控制器发出包：81 06 00 22 00 00 81 00
+
+Setup request:
+
+| Name                    | Value          | Dec    | Hex    |
+|:------------------------|:---------------|-------:|-------:|
+| bmRequestType.Recipient | Interface      | 1      | 0x01   |
+| bmRequestType.Type      | Standard       | 0      | 0x0    |
+| bmRequestType.Direction | Device-to-host | 1      | 0x1    |
+| bRequest                | GET_DESCRIPTOR | 6      | 0x06   |
+| wValue                  | 0x2200         | 8704   | 0x2200 |
+| wIndex                  | 0x0000         | 0      | 0x0000 |
+| wLength                 | 129            | 129    | 0x0081 |
+
+从设备应答包：05 01 09 06 A1 01 05 07 19 E0 29 E7 15 00 25 01 75 01 95 08 81 02 
+95 01 75 08 81 01 95 03 75 01 05 08 19 01 29 03 91 02 95 01 75 05 91 01 95 06 
+75 08 15 00 26 FF 00 05 07 19 00 2A FF 00 81 00 C0
+
+Unknown class-specific descriptor:
+
+| Name                    | Value          | Dec    | Hex    |
+|:------------------------|:---------------|-------:|-------:|
+| Data                    | 65 bytes       |        |        |
+
+## 22.	Class request OUT (0x09)
+主控制器发出包：21 09 00 02 00 00 01 00
+
+Setup request:
+
+| Name                    | Value                              | Dec    | Hex    |
+|:------------------------|:-----------------------------------|-------:|-------:|
+| bmRequestType.Recipient | Interface                          | 1      | 0x01   |
+| bmRequestType.Type      | Class                              | 1      | 0x1    |
+| bmRequestType.Direction | Host-to-device                     | 0      | 0x0    |
+| bRequest                | Class: 0x09 (Find out more online) | 9      | 0x09   |
+| wValue                  | 0x0200                             | 512    | 0x0200 |
+| wIndex                  | 0x0000                             | 0      | 0x0000 |
+| wLength                 | 1                                  | 1      | 0x0001 |
+
+从设备应答包：00
+
+## 完整的HID键盘描述符
 
 ### 设备描述符
 ```c
