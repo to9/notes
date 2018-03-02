@@ -40,7 +40,7 @@
 
 <h3 id="1.2">1.2 Suspended</h3>
 
-### 3.	Reset
+<h3 id="1.3">1.3 Reset</h3>
 
 ### 4.	High speed Detection Handshake
 
