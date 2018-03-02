@@ -7,16 +7,16 @@ USB协议枚举分析
 
 HID键盘 一次完整枚举过程及数据：
 以下描述中“主机”指的是PC的USB主控制器，“设备”指插入USB接口的设备。
-1.	Reset
+## 1.	Reset
 复位设备
 
-2.	Suspended
+## 2.	Suspended
 
-3.	Reset
+## 3.	Reset
 
-4.	High speed Detection Handshake
+## 4.	High speed Detection Handshake
 
-5.	GetDescriptor (Device)
+## 5.	GetDescriptor (Device)
 枚举的第一个请求中，主机试图获取设备描述符来确定默认设备(端点0)的最大包大小。
 主控制器发出包：80 06 00 01 00 00 40 00，其中设备描述符中40给出当前主控制器允许接收最大包大小为64个字节。
 从设备应答包：
@@ -24,7 +24,7 @@ HID键盘 一次完整枚举过程及数据：
 获取设备描述符不全，无关紧要，主要获取从设备设备描述符总长度即可。
 
 主控制器发出包80 06 00 01 00 00 40 00
-
+Setup request:
 | Name                    | Value          |  Dec |     Hex |
 | :---------------------- | :------------- | ---: | ------: |
 | bmRequestType.Recipient | Device         |    0 |    0x00 |
@@ -35,7 +35,24 @@ HID键盘 一次完整枚举过程及数据：
 | wIndex                  | Zero           |    0 |  0x0000 |
 | wLength                 | 64             |   64 |  0x0040 |
 
-
+从设备应答包：12 01 00 02 00 00 00 40 
+Device descriptor:
+| Name               | Value                               | Dec | Hex    |
+|:-------------------|:------------------------------------|----:|-------:|
+| bLength            | Invalid, might be 18                | 18  | 0x12   |
+| bDescriptorType    | DEVICE                              | 1   | 0x01   |
+| bcdUSB             | 2                                   | 512 | 0x0200 |
+| bDeviceClass       | Class defined at interface level    | 0   | 0x00   |
+| bDeviceSubClass    | Subclass defined at interface level | 0   | 0x00   |
+| bDeviceProtocol    | None                                | 0   | 0x00   |
+| bMaxPacketSize0    | 64                                  | 64  | 0x40   |
+| idVendor           | Not available                       | ?   | ?      |
+| idProduct          | Not available                       | ?   | ?      |
+| bcdDevice          | Not available                       | ?   | ?      |
+| iManufacturer      | Not available                       | ?   | ?      |
+| iProduct           | Not available                       | ?   | ?      |
+| iSerialNumber      | Not available                       | ?   | ?      |
+| bNumConfigurations | Not available                       | ?   | ?      |
 
 
 
