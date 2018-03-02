@@ -2,34 +2,36 @@
 
 
 ## 目录
-* [Reset](#1)
-* [Suspended](#2)
-* [Reset](#3)
-* [High speed Detection Handshake](#4)
-* [GetDescriptor (Device)](#5)
-* [Reset](#6)
-* [High speed Detection Handshake](#7)
-* [SetAddress](#8)
-* [GetDescriptor (Device)](#9)
-* [GetDescriptor (Configuration)](#10)
-* [GetDescriptor (Configuration)](#11)
-* [GetDescriptor (String lang IDs)](12#)
-* [GetDescriptor (String iProduct)](13#)
-* [GetDescriptor (String lang IDs)](14#)
-* [GetDescriptor (String iProduct)](15#)
-* [GetDescriptor (Device)](16#)
-* [GetDescriptor (Configuration)](17#)
-* [GetDescriptor (Configuration)](18#)
-* [SetConfiguration (1)No data](19#)
-* [Class request OUT (0x0A)No data](20#)
-* [GetDescriptor (Class: 0x22)](21#)
-* [Class request OUT (0x09)](22#)
+* [1.HID键盘完整枚数据](#1)
+* [1.1 Reset](#1.1)
+* [1.2 Suspended](#1.2)
+* [1.3 Reset](#1.3)
+* [#1.4 High speed Detection Handshake](#1.4)
+* [#1.5 GetDescriptor (Device)](#1.5)
+* [#1.6 Reset](#1.6)
+* [#1.7 High speed Detection Handshake](#1.7)
+* [#1.8 SetAddress](#1.8)
+* [#1.9 GetDescriptor (Device)](#1.9)
+* [#1.10 GetDescriptor (Configuration)](#1.10)
+* [#1.11 GetDescriptor (Configuration)](#1.11)
+* [#1.12 GetDescriptor (String lang IDs)](#1.12)
+* [#1.13 GetDescriptor (String iProduct)](#1.13)
+* [#1.14 GetDescriptor (String lang IDs)](#1.14)
+* [#1.15 GetDescriptor (String iProduct)](#1.15)
+* [#1.16 GetDescriptor (Device)](#1.16)
+* [#1.17 GetDescriptor (Configuration)](#1.17)
+* [#1.18 GetDescriptor (Configuration)](#1.18)
+* [#1.19 SetConfiguration (1)No data](#1.19)
+* [#1.20 Class request OUT (0x0A)No data](#1.20)
+* [#1.21 GetDescriptor (Class: 0x22)](#1.21)
+* [#1.22 Class request OUT (0x09)](#1.22)
+* [2. 设备描述符](#2)
 
 ****
 
 所有的USB通信的数据流都是由主控器发起，其它从设备进行响应。
 
-## HID键盘 一次完整枚举过程及数据：
+## 1.HID键盘完整枚数据
 以下描述中“主机”指的是PC的USB主控制器，“设备”指插入USB接口的设备。
 
 ### 1.	Reset
@@ -422,9 +424,8 @@ Setup request:
 
 从设备应答包：00
 
-## 完整的HID键盘描述符
+### 2. 设备描述符
 
-### 设备描述符
 ```c
 //USB Standard Device Descriptor
 uint8_t USBD_DeviceDesc[18] =
