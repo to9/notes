@@ -39,7 +39,7 @@ HID键盘 一次完整枚举过程及数据：
 
 
 | Name                    | Value          |  Dec |     Hex |
-| ----------------------- | :------------- | ---: | ------: |
+| :---------------------- | :------------- | ---: | ------: |
 | bmRequestType.Recipient | Device         |    0 |    0x00 |
 | bmRequestType.Type      | Standard       |    0 |    0x00 |
 | bmRequestType.Direction | Device-to-host |    1 |    0x01 |
