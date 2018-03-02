@@ -404,35 +404,35 @@ Setup request:
 //USB Standard Device Descriptor
 uint8_t USBD_DeviceDesc[18] =
 {
-	0x12,       /*bLength*/
-              /*描述符大小*/
-	0x01, 			/*bDescriptorType*/
-              /*设备描述符,固定0x01*/
+	0x12, 	    /*bLength*/
+              	    /*描述符大小*/
+	0x01, 	    /*bDescriptorType*/
+                    /*设备描述符,固定0x01*/
 	0x00, 0x02, /*bcdUSB*/
-              /*USB规范发布号0002=2.0, 0110-1.1*/
+                    /*USB规范发布号0002=2.0, 0110-1.1*/
 	0x00,       /*bDeviceClass*/
-              /*类型代码=0所有接口在描述符里并且每个接口独立,=1-F表示不接口,=FF自定义*/
+                    /*类型代码=0所有接口在描述符里并且每个接口独立,=1-F表示不接口,=FF自定义*/
 	0x00,       /*bDeviceSubClass*/
-              /*子类型代码,bDeviceClass 为0, 该值为0, 否则USB-IF组织定义的编码*/
+                    /*子类型代码,bDeviceClass 为0, 该值为0, 否则USB-IF组织定义的编码*/
 	0x00,       /*bDeviceProtoco*/
-              /*协议代码(由USB分配),如果使用USB-IF组织定义的协议就需要设置这里的值,否则直接设置为0.*/
-               /*如果厂商自己定义的可以设置为FFH*/
-	0x40,      	/*bMaxPacketSize*/
-              /*端点0最大分组大小,有效值8,16,32,64*/
+                    /*协议代码(由USB分配),如果使用USB-IF组织定义的协议就需要设置这里的值,否则直接设置为0.*/
+                    /*如果厂商自己定义的可以设置为FFH*/
+	0x40,       /*bMaxPacketSize*/
+                    /*端点0最大分组大小,有效值8,16,32,64*/
 	0x3c, 0x41, /*idVendor*/
-              /*供应商ID(由USB分配)*/
+                    /*供应商ID(由USB分配)*/
 	0x07, 0x21, /*idVendor*/
-              /*产品ID(由厂家分配)*/
+                    /*产品ID(由厂家分配)*/
 	0x02, 0x05, /*bcdDevice*/
-              /*设备出产编码.由厂家自行设置*/
+                    /*设备出产编码.由厂家自行设置*/
 	0x01,       /*Index of manufacturer  string*/
-              /*厂商描述符字符串索引．索引到对应的字符串描述符．为０则表示没有*/
+                    /*厂商描述符字符串索引．索引到对应的字符串描述符．为０则表示没有*/
 	0x02,       /*Index of product string*/
-              /*产品描述符字符串索引*/
+                    /*产品描述符字符串索引*/
 	0x00,       /*Index of serial number string*/
-              /*设备序列号字符串索引*/
+                    /*设备序列号字符串索引*/
 	0x01        /*bNumConfigurations*/
-              /*配置字符串的个数*/
+                    /*配置字符串的个数*/
 } ;
 ```
 
