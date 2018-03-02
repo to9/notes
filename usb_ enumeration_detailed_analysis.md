@@ -1,4 +1,32 @@
-# USB协议枚举分析
+## 详细分析USB协议枚举过程数据
+
+
+## 目录
+* [Reset](#1)
+* [Suspended](#2)
+* [Reset](#3)
+* [High speed Detection Handshake](#4)
+* [GetDescriptor (Device)](#5)
+* [Reset](#6)
+* [High speed Detection Handshake](#7)
+* [SetAddress](#8)
+* [GetDescriptor (Device)](#9)
+* [GetDescriptor (Configuration)](#10)
+* [GetDescriptor (Configuration)](#11)
+* [GetDescriptor (String lang IDs)](12#)
+* [GetDescriptor (String iProduct)](13#)
+* [GetDescriptor (String lang IDs)](14#)
+* [GetDescriptor (String iProduct)](15#)
+* [GetDescriptor (Device)](16#)
+* [GetDescriptor (Configuration)](17#)
+* [GetDescriptor (Configuration)](18#)
+* [SetConfiguration (1)No data](19#)
+* [Class request OUT (0x0A)No data](20#)
+* [GetDescriptor (Class: 0x22)](21#)
+* [Class request OUT (0x09)](22#)
+
+****
+
 所有的USB通信的数据流都是由主控器发起，其它从设备进行响应。
 
 ## HID键盘 一次完整枚举过程及数据：
@@ -59,7 +87,7 @@ Device descriptor:
 
 ### 7.	High speed Detection Handshake
 
-### 8.	SetAddress (1)
+### 8.	SetAddress
 主控制器分配从设备设备的设备地址。范围为0 – 127。
 主控制器发出包：00 05 01 00 00 00 00 00，告知从设备当前从设备地址为1，同设备在其他电脑可能分配地址00 05 16 00 00 00 00 00， 地址22。
 
