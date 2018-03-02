@@ -57,6 +57,8 @@
 
 Setup request:
 
+| Setup request                                             |
+| :-------------------------------------------------------- |
 | Name                    | Value          |  Dec |     Hex |
 | :---------------------- | :------------- | ---: | ------: |
 | bmRequestType.Recipient | Device         |    0 |    0x00 |
