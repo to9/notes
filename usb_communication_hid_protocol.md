@@ -1,10 +1,52 @@
-## USB枚举成HID协议设备 - 定长传输
+## USB枚举成HID协议设备 
 
-## USB枚举成HID协议设备 - 变长传输
+* 什么选择HID进行通信？
 
+**优势**：我们不需要针对pc下进行usb驱动开发，系统是免驱的，即系统自带HID驱动程序。真正实现设备即插即用。
+
+**劣势**：当我们设备选择了HID进行通信，也就意味着速度是个大问题。如果对设备通信速度要求不是特别高的话，hid协议通信是个不错选择。
+
+* 数据传输方式
+设备是被动设备，需要PC进行一次“写读”来完成一次数据交互，数据发起方只能是PC，设备只能被动接收进行处理。
+
+### HID报告描述符
+设置输入和输出报告长度为136字节。这样我们每次在pc上对设备进行读写时候发送和接收均已136字节为一包数据进行交互。这个长度可以根据我们实际需要进行修改。
+
+设备HID报告描述符如下：
 ```c
-
+const unsigned char HID_Report_DESC[] =
+{
+    0x06, 0xA0, 0xFF,   // usage page (vendor spec)
+    0x09, 0x01,         // usage (vendor spec)
+    0xA1, 0x01,         // collection (application)
+    0x09, 0x02,         // usage (vendor spec)
+    0xA1, 0x00,         // collection (linked)
+    0x06, 0xA1, 0xFF,   // usage page (vendor defined)
+    0x09, 0x03,         // usage (vendor spec)
+    0x09, 0x04,         // usage (vendor defined)
+    0x15, 0x80,         // logic min(-127)
+    0x25, 0x7f,         // logic max(128)
+    0x75, 0x08,         // report size(8 bit each)
+    0x95, 0x88,         // report count(136 reports)
+    0x81, 0x02,         // input(data, variable, absolute)
+    0x09, 0x05,         // usage (vendor spec)
+    0x09, 0x06,         // usage (vendor defined)
+    0x15, 0x80,         // logic min(-127)
+    0x25, 0x7f,         // logic max(128)
+    0x75, 0x08,         // report size(8 bit each)
+    0x95, 0x88,         // report count(136 reports)
+    0x91, 0x02,         // output(data, variable, absolute)
+    0xc0,               // end collection
+    0xc0                // end collection
+};
 ```
+
+### HID定长数据传输
+定长数据传输指的是PC与设备进行数据交互时候，上发送和接收均
+
+### USB变长传输数据传输
+
+
 
 ## USB枚举成CCID协议设备
 
