@@ -186,6 +186,3 @@ Bus Hound数据包：
             ...   
 ```
 
-## USB枚举成CCID协议设备
-
-## USB枚举成Umass协议设备
