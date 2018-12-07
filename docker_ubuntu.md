@@ -3,8 +3,8 @@
 ## 目录
 * [1. OS requirements](#1)
 * [2. Uninstall old versions](#2)
-* [3. Install from a package](#3)
-* [4. Install using the convenience script](#4)
+* [3. Install](#3)
+* [4. Uninstall](#4)
 * [5. Install using the repository](#5) 
 * [6. Install](#6)
 * [7. Uninstall](#7)
@@ -34,11 +34,9 @@ To install Docker CE, you need the 64-bit version of one of these Ubuntu version
 $ sudo apt-get remove docker docker-engine docker.io
 ```
 
-### 3. Install from a package
+### 3. Install
+Install using the repository.
 
-### 4. Install using the convenience script
-
-### 5. Install using the repository
 1. Update the apt package index:
 
 ```bash
@@ -94,21 +92,19 @@ $ sudo add-apt-repository \
    stable"
 ```
 
-### 6. Install
-
-1.Update the apt package index.
+5. Update the apt package index.
 
 ```bash
 $ sudo apt-get update
 ```
 
-2. Install the latest version of Docker CE, or go to the next step to install a specific version:
+6. Install the latest version of Docker CE, or go to the next step to install a specific version:
 
 ```bash
 $ sudo apt-get install docker-ce
 ```
 
-4.Verify that Docker CE is installed correctly by running the hello-world image.
+7. Verify that Docker CE is installed correctly by running the hello-world image.
 
 ```bash
 $ sudo docker run hello-world
@@ -136,7 +132,7 @@ $ sudo systemctl show --property=Environment docker
 $ sudo systemctl restart docker
 ```
 
-### 7. Uninstall
+### 4. Uninstall
 
 1. Uninstall the Docker CE package:
 
