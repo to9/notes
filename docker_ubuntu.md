@@ -26,7 +26,10 @@ To install Docker CE, you need the 64-bit version of one of these Ubuntu version
 
 
 ### 2. Uninstall old versions
+
+```bash
 $ sudo apt-get remove docker docker-engine docker.io
+```
 
 ### 3. Install from a package
 
