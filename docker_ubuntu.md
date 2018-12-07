@@ -20,8 +20,11 @@
 
 ### 1. OS requirements
 To install Docker CE, you need the 64-bit version of one of these Ubuntu versions:
+
     Bionic 18.04 (LTS)
+    
     Xenial 16.04 (LTS)
+    
     Trusty 14.04 (LTS)
 
 
@@ -66,8 +69,8 @@ curl: (28) Connection timed out after 300502 milliseconds
 gpg: no valid OpenPGP data found.
 ```
 
-```bash
-$ export https_proxy="https://xxxx:xxxx@proxy.neusoft.com:8080/"
+```bashl
+$ export https_proxy="https://xxxx:xxxx@proxy.lnsign.com:8080/"
 ```
 ```bash
 $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -122,8 +125,8 @@ $ sudo vim /etc/systemd/system/docker.service.d/http-proxy.conf
 
 ```bash
 [Service]
-Environment="HTTP_PROXY=http://xxxx:yyyy@proxy.neusoft.com:8080/"
-Environment="HTTP_PROXY=http://xxxx:yyyy@proxy.neusoft.com:8080/"
+Environment="HTTP_PROXY=http://xxxx:yyyy@proxy.lnsign.com:8080/"
+Environment="HTTP_PROXY=http://xxxx:yyyy@proxy.lnsign.com:8080/"
 Environment="NO_PROXY=localhost,127.0.0.1,localaddress,.localdomain.com,10.10.163.114"
 ```
 
