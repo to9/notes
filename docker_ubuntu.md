@@ -58,10 +58,10 @@ $ sudo apt-get install \
 $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 ```
 
-如果成功会出现OK！如果长时间无反应，需要对当前shell设置代理，在试。
+如果成功会出现OK！如果长时间无反应或失败，需要对当前shell设置代理。
 
 ```bash
-root@position-ThinkCentre-M8600t-N000:/opt# curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 curl: (28) Connection timed out after 300502 milliseconds
 gpg: no valid OpenPGP data found.
 ```
@@ -70,7 +70,7 @@ gpg: no valid OpenPGP data found.
 $ export https_proxy="https://xxxx:xxxx@proxy.neusoft.com:8080/"
 ```
 ```bash
-root@position-ThinkCentre-M8600t-N000:/opt# curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 OK
 ```
 
