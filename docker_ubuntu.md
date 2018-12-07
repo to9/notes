@@ -6,27 +6,13 @@
 * [3. Install](#3)
 * [4. Uninstall](#4)
 * [5. Install using the repository](#5) 
-* [6. Install](#6)
-* [7. Uninstall](#7)
-* [8. authorized_keys文件](#8)
-* [9. Git用户密钥生成/使用](#9) 
-* [10.  为git用户设置SSH验证](#10)
-* [11. 创建初始化代码仓](#11)
-* [12. win下测试版本库](#12)
-* [13.git目录权限](#13)
-* [14. 自动部署](#14)
-
 ****
 
 ### 1. OS requirements
 To install Docker CE, you need the 64-bit version of one of these Ubuntu versions:
-
-    Bionic 18.04 (LTS)
-    
-    Xenial 16.04 (LTS)
-    
-    Trusty 14.04 (LTS)
-
+* Bionic 18.04 (LTS)
+* Xenial 16.04 (LTS)
+* Trusty 14.04 (LTS)
 
 ### 2. Uninstall old versions
 
