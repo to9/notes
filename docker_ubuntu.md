@@ -123,6 +123,7 @@ $ sudo systemctl restart docker
 ```
 
 客户端基于证书访问docker服务器仓库
+
 A custom certificate is configured by creating a directory under /etc/docker/certs.d using the same name as the registry’s hostname, such as localhost. All *.crt files are added to this directory as CA roots.
 
 The following illustrates a configuration with custom certificates:
