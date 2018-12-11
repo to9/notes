@@ -16,6 +16,21 @@ To install Docker CE, you need the 64-bit version of one of these Ubuntu version
 * Xenial 16.04 (LTS)
 * Trusty 14.04 (LTS)
 
+查看ubuntu系统版本
+
+```bash
+# cat /etc/lsb-release 
+DISTRIB_ID=Ubuntu
+DISTRIB_RELEASE=16.04
+DISTRIB_CODENAME=xenial
+DISTRIB_DESCRIPTION="Ubuntu 16.04.5 LTS"
+```
+查看内核架构
+```bash
+# uname -a
+Linux N000 4.4.0-140-generic #166-Ubuntu SMP Wed Nov 14 20:09:47 UTC 2018 x86_64 x86_64 x86_64 GNU/Linux
+```
+
 ### 2. Uninstall old versions
 
 ```bash
